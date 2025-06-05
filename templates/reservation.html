@@ -1,0 +1,219 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bistro Gourmet - Réservation</title>
+  <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'css/reservation.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="{% url 'frontend:index' %}">Bistro Gourmet</a>
+      </div>
+      <nav class="main-nav">
+        <button class="mobile-menu-toggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="{% url 'frontend:index' %}">Accueil</a></li>
+          <li><a href="{% url 'frontend:menu' %}">Menu</a></li>
+          <li><a href="{% url 'frontend:reservations' %}" class="active">Réservations</a></li>
+          <li><a href="{% url 'frontend:commander' %}">Commander</a></li>
+          <li class="auth-links">
+            <a href="{% url 'frontend:login' %}" class="btn btn-outline">Connexion</a>
+            <a href="{% url 'frontend:register' %}" class="btn btn-primary">Inscription</a>
+          </li>
+        </ul>   
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero" style="background-image: url('https://images.pexels.com/photos/2403391/pexels-photo-2403391.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')">
+    <div class="container">
+      <h1>Réservation de table</h1>
+      <p>Réservez votre table en quelques clics</p>
+    </div>
+  </section>
+
+  <section class="reservation-section">
+    <div class="container">
+      <div class="reservation-container">
+        <div class="reservation-form-container">
+          <h2>Réserver votre table</h2>
+          
+          <div class="alert hidden" id="reservation-error" role="alert">
+            Une erreur s'est produite. Veuillez réessayer.
+          </div>
+          <div class="alert success hidden" id="reservation-success" role="alert">
+            Votre réservation a été enregistrée avec succès!
+          </div>
+          
+          <form id="reservation-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="reservation-date">Date</label>
+                <input type="date" id="reservation-date" name="dateReservation" required>
+              </div>
+              <div class="form-group">
+                <label for="reservation-time">Heure</label>
+                <select id="reservation-time" name="heureReservation" required>
+                  <option value="">Sélectionnez une heure</option>
+                  <option value="12:00">12:00</option>
+                  <option value="12:30">12:30</option>
+                  <option value="13:00">13:00</option>
+                  <option value="13:30">13:30</option>
+                  <option value="14:00">14:00</option>
+                  <option value="19:00">19:00</option>
+                  <option value="19:30">19:30</option>
+                  <option value="20:00">20:00</option>
+                  <option value="20:30">20:30</option>
+                  <option value="21:00">21:00</option>
+                  <option value="21:30">21:30</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="reservation-persons">Nombre de personnes</label>
+                <select id="reservation-persons" name="nbPersonnes" required>
+                  <option value="">Sélectionnez</option>
+                  <option value="1">1 personne</option>
+                  <option value="2">2 personnes</option>
+                  <option value="3">3 personnes</option>
+                  <option value="4">4 personnes</option>
+                  <option value="5">5 personnes</option>
+                  <option value="6">6 personnes</option>
+                  <option value="7">7 personnes</option>
+                  <option value="8">8 personnes</option>
+                  <option value="9">9 personnes</option>
+                  <option value="10">10 personnes</option>
+                </select>
+              </div>
+              <div class="form-group" id="tables-container">
+                <label for="reservation-table">Table</label>
+                <select id="reservation-table" name="table_id" disabled required>
+                  <option value="">Sélectionnez d'abord date, heure et nombre de personnes</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="reservation-comment">Commentaires spéciaux (allergies, occasions, etc.)</label>
+              <textarea id="reservation-comment" name="commentaire" rows="3" placeholder="Ex: Allergie aux noix, anniversaire..."></textarea>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block">Réserver maintenant</button>
+            </div>
+          </form>
+        </div>
+        <div class="reservation-info">
+          <h3>Informations</h3>
+          <div class="info-item">
+            <h4>Horaires d'ouverture</h4>
+            <p>Lundi - Vendredi: 12h00 - 14h30, 19h00 - 22h30</p>
+            <p>Samedi - Dimanche: 12h00 - 15h00, 19h00 - 23h00</p>
+          </div>
+          <div class="info-item">
+            <h4>Politique de réservation</h4>
+            <ul>
+              <li>Les réservations doivent être effectuées au moins 2 heures à l'avance.</li>
+              <li>En cas d'annulation, merci de nous prévenir au moins 24h à l'avance.</li>
+              <li>Une confirmation vous sera envoyée par email (si l'email est fourni lors de la réservation ou via le profil utilisateur).</li>
+              <li>Pour les groupes de plus de 10 personnes, veuillez nous contacter directement par téléphone.</li>
+            </ul>
+          </div>
+          <div class="info-item">
+            <h4>Contact</h4>
+            <p>Pour toute question, n'hésitez pas à nous contacter:</p>
+            <p>Téléphone: 01 23 45 67 89</p>
+            <p>Email: reservations@bistrogourmet.fr</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="my-reservations-section hidden" id="my-reservations-section">
+    <div class="container">
+      <h2>Mes réservations</h2>
+      <div class="reservations-list" id="reservations-list">
+        <div class="loading">
+          <div class="spinner"></div>
+          <p>Chargement de vos réservations...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal" id="reservation-detail-modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close-modal" onclick="this.closest('.modal').style.display='none'">&times;</span>
+      <h2>Détails de la réservation <span id="modal-reservation-id-display"></span></h2>
+      <div class="reservation-details">
+        <div class="reservation-details-info">
+          <p><strong>Date:</strong> <span id="modal-reservation-date-display"></span></p>
+          <p><strong>Heure:</strong> <span id="modal-reservation-time-display"></span></p>
+          <p><strong>Nombre de personnes:</strong> <span id="modal-reservation-persons-display"></span></p>
+          <p><strong>Table:</strong> <span id="modal-reservation-table-display"></span></p>
+          <p><strong>Statut:</strong> <span id="modal-reservation-status-display" class="status-badge"></span></p>
+        </div>
+        <div class="reservation-comment">
+          <h3>Commentaire :</h3>
+          <p id="modal-reservation-comment-display">-</p>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-outline" onclick="document.getElementById('reservation-detail-modal').style.display='none'">Fermer</button>
+          <button class="btn btn-secondary hidden" id="modal-cancel-reservation-btn" data-id="">Annuler la réservation</button>
+          <button class="btn btn-primary hidden" id="modal-modify-reservation-btn" data-id="">Modifier la réservation</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h3>Bistro Gourmet</h3>
+          <p>Une expérience culinaire exceptionnelle</p>
+        </div>
+        <div class="footer-links">
+          <h4>Liens rapides</h4>
+          <ul>
+            <li><a href="{% url 'frontend:index' %}">Accueil</a></li>
+            <li><a href="{% url 'frontend:menu' %}">Menu</a></li>
+            <li><a href="{% url 'frontend:reservations' %}">Réservations</a></li>
+            <li><a href="{% url 'frontend:commander' %}">Commander</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>123 Avenue de la Gastronomie<br>75001 Paris</p>
+          <p>Téléphone: 01 23 45 67 89</p>
+          <p>Email: contact@bistrogourmet.fr</p>
+        </div>
+        <div class="footer-hours">
+          <h4>Horaires d'ouverture</h4>
+          <p>Lundi - Vendredi: 12h00 - 14h30, 19h00 - 22h30</p>
+          <p>Samedi - Dimanche: 12h00 - 15h00, 19h00 - 23h00</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; {% now "Y" %} Bistro Gourmet. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/reservation.js' %}"></script>
+</body>
+</html>

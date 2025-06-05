@@ -1,0 +1,301 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bistro Gourmet - Commander</title>
+  <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  {% comment %} Lien vers votre commande.css {% endcomment %}
+  <link rel="stylesheet" href="{% static 'css/commande.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  {% comment %} Barre de navigation complète (similaire aux autres pages) {% endcomment %}
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="{% url 'frontend:index' %}">Bistro Gourmet</a>
+      </div>
+      <nav class="main-nav">
+        <button class="mobile-menu-toggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="{% url 'frontend:index' %}">Accueil</a></li>
+          <li><a href="{% url 'frontend:menu' %}">Menu</a></li>
+          <li><a href="{% url 'frontend:reservations' %}">Réservations</a></li>
+          <li><a href="{% url 'frontend:commander' %}" class="active">Commander</a></li>
+          <li class="auth-links">
+            {% comment %} Les liens de connexion/profil/déconnexion seront insérés ici par main.js {% endcomment %}
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="order-section">
+    <div class="container">
+      <div class="order-container">
+        <h1>Finaliser ma commande</h1>
+
+        {% comment %} Indicateur d'étapes (basé sur commande.css) {% endcomment %}
+        <div class="order-steps">
+          <div class="step active" data-step="1">
+            <div class="step-number">1</div>
+            <div class="step-text">Panier</div>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" data-step="2">
+            <div class="step-number">2</div>
+            <div class="step-text">Livraison</div>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" data-step="3">
+            <div class="step-number">3</div>
+            <div class="step-text">Paiement</div>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" data-step="4">
+            <div class="step-number">4</div>
+            <div class="step-text">Confirmation</div>
+          </div>
+        </div>
+
+        {% comment %} Contenu des étapes {% endcomment %}
+        <div id="order-steps-container">
+          <div class="order-step-content active" id="step-1-content">
+            <h2>Votre Panier</h2>
+            <div class="cart-items-container" id="checkout-cart-items">
+              {% comment %} Les articles du panier seront chargés ici par commande.js {% endcomment %}
+              <div class="loading">
+                <div class="spinner"></div> <p>Chargement du panier...</p>
+              </div>
+            </div>
+            <div class="cart-summary">
+              <div class="cart-total-row">
+                <span>Sous-total</span>
+                <span id="cart-subtotal">0.00 €</span>
+              </div>
+              <div class="cart-total-row">
+                <span>Frais de livraison</span>
+                <span id="cart-delivery-fee">0.00 €</span>
+              </div>
+              <div class="cart-total-row total">
+                <span>Total</span>
+                <span id="cart-total">0.00 €</span>
+              </div>
+            </div>
+            <div class="step-buttons">
+              <a href="{% url 'frontend:menu' %}" class="btn btn-outline">Continuer les achats</a>
+              <button type="button" class="btn btn-primary" id="to-step-2">Passer à la livraison</button>
+            </div>
+          </div>
+
+          <div class="order-step-content" id="step-2-content">
+            <h2>Informations de Livraison</h2>
+            <form id="delivery-form">
+              <div class="form-group">
+                <label for="delivery-name">Nom complet</label>
+                <input type="text" id="delivery-name" name="deliveryName" required>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="delivery-phone">Téléphone</label>
+                  <input type="tel" id="delivery-phone" name="deliveryPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="delivery-email">Email (pour confirmation)</label>
+                    <input type="email" id="delivery-email" name="deliveryEmail" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="delivery-address">Adresse</label>
+                <input type="text" id="delivery-address" name="deliveryAddress" required>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="delivery-city">Ville</label>
+                  <input type="text" id="delivery-city" name="deliveryCity" required>
+                </div>
+                <div class="form-group">
+                  <label for="delivery-postal">Code Postal</label>
+                  <input type="text" id="delivery-postal" name="deliveryPostal" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="delivery-instructions">Instructions de livraison (optionnel)</label>
+                <textarea id="delivery-instructions" name="deliveryInstructions" rows="3"></textarea>
+              </div>
+
+              <div class="delivery-options">
+                <h3>Mode de livraison</h3>
+                <div class="radio-group">
+                  <div class="radio-option">
+                    <input type="radio" id="delivery-standard" name="deliveryOption" value="standard" checked>
+                    <label for="delivery-standard">
+                      <span class="radio-title">Livraison Standard</span>
+                      <span class="radio-description">30-45 min</span>
+                      <span class="radio-price">+2.99 €</span>
+                    </label>
+                  </div>
+                  <div class="radio-option">
+                    <input type="radio" id="delivery-express" name="deliveryOption" value="express">
+                    <label for="delivery-express">
+                      <span class="radio-title">Livraison Express</span>
+                      <span class="radio-description">15-20 min</span>
+                      <span class="radio-price">+4.99 €</span>
+                    </label>
+                  </div>
+                  <div class="radio-option">
+                    <input type="radio" id="delivery-pickup" name="deliveryOption" value="pickup">
+                    <label for="delivery-pickup">
+                      <span class="radio-title">À emporter</span>
+                      <span class="radio-description">Prêt en 15 min</span>
+                      <span class="radio-price">Gratuit</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="step-buttons">
+              <button type="button" class="btn btn-outline" id="back-to-step-1">Retour au panier</button>
+              <button type="button" class="btn btn-primary" id="to-step-3">Passer au paiement</button>
+            </div>
+          </div>
+
+          <div class="order-step-content" id="step-3-content">
+            <h2>Paiement</h2>
+            <form id="payment-form">
+              <div class="form-group">
+                  <label>Mode de paiement</label>
+                  <div class="radio-group">
+                      <div class="radio-option">
+                          <input type="radio" id="payment-card" name="methodePaiement" value="carte" checked>
+                          <label for="payment-card">Carte bancaire</label>
+                      </div>
+                      <div class="radio-option">
+                          <input type="radio" id="payment-paypal" name="methodePaiement" value="paypal">
+                          <label for="payment-paypal">PayPal</label>
+                      </div>
+                      <div class="radio-option">
+                          <input type="radio" id="payment-cash" name="methodePaiement" value="especes_livraison">
+                          <label for="payment-cash">Paiement à la livraison</label>
+                      </div>
+                  </div>
+              </div>
+
+              <div id="card-payment-fields" class="hidden">
+                  <div class="form-group">
+                      <label for="card-name">Nom sur la carte</label>
+                      <input type="text" id="card-name" name="cardName">
+                  </div>
+                  <div class="form-group">
+                      <label for="card-number">Numéro de carte</label>
+                      <input type="text" id="card-number" name="cardNumber" placeholder="•••• •••• •••• ••••">
+                  </div>
+                  <div class="form-row">
+                      <div class="form-group">
+                          <label for="card-expiry">Date d'expiration (MM/AA)</label>
+                          <input type="text" id="card-expiry" name="cardExpiry" placeholder="MM/AA">
+                      </div>
+                      <div class="form-group">
+                          <label for="card-cvv">CVV</label>
+                          <input type="text" id="card-cvv" name="cardCvv" placeholder="•••">
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                <label for="order-comment">Commentaire pour la commande (optionnel)</label>
+                <textarea id="order-comment" name="orderComment" rows="3"></textarea>
+              </div>
+              <div class="alert hidden" id="order-error" role="alert"></div>
+            </form>
+            <div class="step-buttons">
+              <button type="button" class="btn btn-outline" id="back-to-step-2">Retour à la livraison</button>
+              <button type="button" class="btn btn-primary btn-lg" id="place-order">Valider et Payer <span id="payment-total-amount"></span></button>
+            </div>
+          </div>
+
+          <div class="order-step-content" id="step-4-content">
+            <div class="order-confirmation">
+              <div class="confirmation-icon">✓</div>
+              <h2>Merci pour votre commande !</h2>
+              <p class="confirmation-message">Votre commande a été enregistrée avec succès.</p>
+              <div class="order-info">
+                <div class="order-info-item">
+                  <span>Numéro de commande:</span>
+                  <strong id="order-number">#12345</strong>
+                </div>
+                <div class="order-info-item">
+                  <span>Date de commande:</span>
+                  <strong id="order-date">5 juin 2025</strong>
+                </div>
+                <div class="order-info-item">
+                  <span>Montant total:</span>
+                  <strong id="order-amount">0.00 €</strong>
+                </div>
+                <div class="order-info-item">
+                  <span>Mode de livraison:</span>
+                  <strong id="order-delivery">Standard</strong>
+                </div>
+              </div>
+              <p class="delivery-estimate">Estimation du temps de livraison: <span id="delivery-time">30-45 minutes</span></p>
+              <div class="confirmation-actions">
+                <a href="{% url 'frontend:index' %}" class="btn btn-primary">Retour à l'accueil</a>
+                <a href="{% url 'frontend:profile' %}#commandes" class="btn btn-outline">Voir mes commandes</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% comment %} Footer standard {% endcomment %}
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h3>Bistro Gourmet</h3>
+          <p>Une expérience culinaire exceptionnelle</p>
+        </div>
+        <div class="footer-links">
+          <h4>Liens rapides</h4>
+          <ul>
+            <li><a href="{% url 'frontend:index' %}">Accueil</a></li>
+            <li><a href="{% url 'frontend:menu' %}">Menu</a></li>
+            <li><a href="{% url 'frontend:reservations' %}">Réservations</a></li>
+            <li><a href="{% url 'frontend:commander' %}">Commander</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>123 Avenue de la Gastronomie<br>75001 Paris</p>
+          <p>Téléphone: 01 23 45 67 89</p>
+          <p>Email: contact@bistrogourmet.fr</p>
+        </div>
+        <div class="footer-hours">
+          <h4>Horaires d'ouverture</h4>
+          <p>Lundi - Vendredi: 12h00 - 14h30, 19h00 - 22h30</p>
+          <p>Samedi - Dimanche: 12h00 - 15h00, 19h00 - 23h00</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; {% now "Y" %} Bistro Gourmet. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  {% comment %} Scripts JS standards {% endcomment %}
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/commande.js' %}"></script> {% comment %} Votre script pour la commande {% endcomment %}
+
+</body>
+</html>

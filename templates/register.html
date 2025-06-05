@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bistro Gourmet - Inscription</title>
+  <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">Bistro Gourmet</a>
+      </div>
+      <nav class="main-nav">
+        <button class="mobile-menu-toggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="{% url 'frontend:index' %}" class="active">Accueil</a></li>
+          <li><a href="{% url 'frontend:menu' %}">Menu</a></li>
+          <li><a href="{% url 'frontend:reservations' %}">Réservations</a></li>
+          <li><a href="{% url 'frontend:commander' %}">Commander</a></li>
+          <li class="auth-links">
+            <a href="{% url 'frontend:login' %}" class="btn btn-outline">Connexion</a>
+            <a href="{% url 'frontend:register' %}" class="btn btn-primary">Inscription</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="auth-section">
+    <div class="container">
+      <div class="auth-container">
+        <div class="auth-image" style="background-image: url('https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')">
+        </div>
+        <div class="auth-form">
+          <h1>Inscription</h1>
+          <p class="auth-subtitle">Créez un compte pour commencer à profiter de nos services</p>
+          
+          <div class="alert hidden" id="register-error">
+            Une erreur s'est produite. Veuillez réessayer.
+          </div>
+          
+          <form id="register-form">
+            <div class="form-group">
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" name="nom" required>
+            </div>
+            <div class="form-group">
+  <label for="prenom">Prénom</label>
+  <input type="text" id="prenom" name="prenom" required>
+</div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="telephone">Téléphone</label>
+              <input type="tel" id="telephone" name="telephone">
+            </div>
+            <div class="form-group">
+              <label for="password">Mot de passe</label>
+              <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+              <label for="password_confirm">Confirmer le mot de passe</label>
+              <input type="password" id="password_confirm" name="password_confirm" required>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block">S'inscrire</button>
+            </div>
+          </form>
+          
+          <div class="auth-footer">
+            <p>Vous avez déjà un compte? <a href="login.html">Connectez-vous</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h3>Bistro Gourmet</h3>
+          <p>Une expérience culinaire exceptionnelle</p>
+        </div>
+        <div class="footer-links">
+          <h4>Liens rapides</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="reservation.html">Réservations</a></li>
+            <li><a href="commander.html">Commander</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>123 Avenue de la Gastronomie<br>75001 Paris</p>
+          <p>Téléphone: 01 23 45 67 89</p>
+          <p>Email: contact@bistrogourmet.fr</p>
+        </div>
+        <div class="footer-hours">
+          <h4>Horaires d'ouverture</h4>
+          <p>Lundi - Vendredi: 12h00 - 14h30, 19h00 - 22h30</p>
+          <p>Samedi - Dimanche: 12h00 - 15h00, 19h00 - 23h00</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Bistro Gourmet. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/auth.js' %}"></script>
+</body>
+</html>

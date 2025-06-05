@@ -1,0 +1,265 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bistro Gourmet - Mon Profil</title>
+  <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'css/profile.css' %}"> {# Utilisant le profile.css que vous avez fourni #}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="{% url 'frontend:index' %}">Bistro Gourmet</a>
+      </div>
+      <nav class="main-nav">
+        <button class="mobile-menu-toggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="{% url 'frontend:index' %}">Accueil</a></li>
+          <li><a href="{% url 'frontend:menu' %}">Menu</a></li>
+          <li><a href="{% url 'frontend:reservations' %}">Réservations</a></li>
+          <li><a href="{% url 'frontend:commander' %}">Commander</a></li>
+          <li class="auth-links">
+            {% comment %} Liens d'authentification insérés par main.js {% endcomment %}
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="profile-section">
+    <div class="container">
+      <div class="profile-container">
+        <aside class="profile-sidebar">
+          <div class="profile-user">
+            <div class="profile-avatar">
+              <span id="profile-initials">--</span>
+            </div>
+            <h3 id="profile-name">Chargement...</h3>
+            <p id="profile-email">Chargement...</p>
+          </div>
+          <nav>
+            <ul class="profile-nav">
+              <li><a href="#profil" class="active" data-tab="profil"><i class="icon-user"></i> Mon profil</a></li>
+              <li><a href="#commandes" data-tab="commandes"><i class="icon-orders"></i> Mes commandes</a></li>
+              <li><a href="#reservations" data-tab="reservations"><i class="icon-reservations"></i> Mes réservations</a></li>
+              <li><a href="#securite" data-tab="securite"><i class="icon-security"></i> Sécurité</a></li>
+            </ul>
+          </nav>
+        </aside>
+        
+        <main class="profile-content">
+          <div class="profile-tab active" id="profil-tab">
+            <h2>Informations personnelles</h2>
+            <div class="alert hidden" id="profile-error" role="alert"></div>
+            <div class="alert success hidden" id="profile-success" role="alert"></div>
+            
+            <form id="profile-form" class="styled-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="profile-prenom">Prénom</label>
+                  <input type="text" id="profile-prenom" name="prenom">
+                </div>
+                <div class="form-group">
+                  <label for="profile-nom">Nom</label>
+                  <input type="text" id="profile-nom" name="nom">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="profile-email-input">Email</label>
+                <input type="email" id="profile-email-input" name="email" readonly>
+                <small>L'email ne peut pas être modifié.</small>
+              </div>
+              <div class="form-group">
+                <label for="profile-telephone">Téléphone</label>
+                <input type="tel" id="profile-telephone" name="telephone">
+              </div>
+              <div class="form-group">
+                <label for="profile-adresse">Adresse</label>
+                <textarea id="profile-adresse" name="adresse" rows="3" placeholder="Ex: 12 rue de la Paix, 75002 Paris"></textarea>
+              </div>
+              <div class="form-group form-actions">
+                <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+              </div>
+            </form>
+          </div>
+          
+          <div class="profile-tab" id="commandes-tab">
+            <h2>Mes commandes</h2>
+            <div class="data-list-container" id="user-orders-list">
+              <div class="loading"><div class="spinner"></div><p>Chargement de vos commandes...</p></div>
+            </div>
+          </div>
+          
+          <div class="profile-tab" id="reservations-tab">
+            <h2>Mes réservations</h2>
+            <div class="data-list-container" id="user-reservations-list">
+              <div class="loading"><div class="spinner"></div><p>Chargement de vos réservations...</p></div>
+            </div>
+          </div>
+          
+          <div class="profile-tab" id="securite-tab">
+            <h2>Changer mon mot de passe</h2>
+            <div class="alert hidden" id="password-error" role="alert"></div>
+            <div class="alert success hidden" id="password-success" role="alert"></div>
+            
+            <form id="password-form" class="styled-form">
+              <div class="form-group">
+                <label for="current-password">Mot de passe actuel</label>
+                <input type="password" id="current-password" name="old_password" required autocomplete="current-password">
+              </div>
+              <div class="form-group">
+                <label for="new-password">Nouveau mot de passe</label>
+                <input type="password" id="new-password" name="new_password" required autocomplete="new-password">
+              </div>
+              <div class="form-group">
+                <label for="confirm-password">Confirmer le nouveau mot de passe</label>
+                <input type="password" id="confirm-password" name="new_password_confirm" required autocomplete="new-password">
+              </div>
+              <div class="form-group form-actions">
+                <button type="submit" class="btn btn-primary">Changer le mot de passe</button>
+              </div>
+            </form>
+          </div>
+        </main>
+      </div>
+    </div>
+  </section>
+
+  {% comment %} Modale pour les détails de la commande - IDs vérifiés/corrigés {% endcomment %}
+  <div class="modal" id="order-detail-modal" aria-labelledby="order-detail-title" role="dialog" aria-modal="true">
+    <div class="modal-content large-modal">
+      <button class="close-modal" aria-label="Fermer la modale">&times;</button>
+      <h2 id="order-detail-title">Détails de la commande <span id="modal-order-id-display"></span></h2> {# Changé pour être cohérent #}
+      <div class="order-details">
+        <div class="order-details-grid">
+            <p><strong>Date:</strong> <span id="modal-order-date-display"></span></p> {# Changé pour être cohérent #}
+            <p><strong>Statut:</strong> <span id="modal-order-status-display" class="status-badge"></span></p> {# Changé pour être cohérent #}
+            <p><strong>Mode de paiement:</strong> <span id="modal-order-payment-display"></span></p> {# Changé pour être cohérent #}
+            <p><strong>Mode de livraison:</strong> <span id="modal-order-delivery-mode-display"></span></p> {# Changé pour être cohérent #}
+        </div>
+        
+        <h3>Articles commandés</h3>
+        <div class="table-responsive">
+            <table class="table order-items-table">
+                <thead>
+                <tr>
+                    <th>Plat</th>
+                    <th>Prix unitaire</th>
+                    <th>Quantité</th>
+                    <th class="text-right">Sous-total</th>
+                </tr>
+                </thead>
+                <tbody id="modal-order-items-display"> {# Changé pour être cohérent #}
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="3" class="text-right"><strong>Sous-total articles:</strong></td>
+                    <td id="modal-order-subtotal-display" class="text-right"></td> {# Changé pour être cohérent #}
+                </tr>
+                <tr>
+                    <td colspan="3" class="text-right"><strong>Frais de livraison:</strong></td>
+                    <td id="modal-order-delivery-fee-display" class="text-right"></td> {# Changé pour être cohérent #}
+                </tr>
+                <tr>
+                    <td colspan="3" class="text-right total-label"><strong>Total général:</strong></td>
+                    <td id="modal-order-total-display" class="total-cell text-right"></td> {# Changé pour être cohérent #}
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+        
+        <div class="order-extra-info">
+            <div class="order-address-info" id="modal-order-address-section-display"> {# Changé pour être cohérent #}
+                <h3>Adresse de livraison</h3>
+                <p id="modal-order-address-display">-</p> {# Changé pour être cohérent #}
+            </div>
+            <div class="order-comment-info">
+                <h3>Commentaire client</h3>
+                <p id="modal-order-comment-display">-</p> {# Changé pour être cohérent #}
+            </div>
+        </div>
+        
+        <div class="modal-actions">
+          <button class="btn btn-outline" id="close-order-detail-modal-btn">Fermer</button>
+          <button class="btn btn-primary" id="reorder-btn">Commander à nouveau</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% comment %} Modale pour les détails de la réservation - IDs vérifiés/corrigés {% endcomment %}
+  <div class="modal" id="reservation-detail-modal" aria-labelledby="reservation-detail-title" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button class="close-modal" aria-label="Fermer la modale">&times;</button>
+      <h2 id="reservation-detail-title">Détails de la réservation <span id="modal-reservation-id-display"></span></h2>
+      <div class="reservation-details">
+        <div class="reservation-details-info">
+          <p><strong>Date:</strong> <span id="modal-reservation-date-display"></span></p>
+          <p><strong>Heure:</strong> <span id="modal-reservation-time-display"></span></p>
+          <p><strong>Nombre de personnes:</strong> <span id="modal-reservation-persons-display"></span></p>
+          <p><strong>Table:</strong> <span id="modal-reservation-table-display"></span></p>
+          <p><strong>Statut:</strong> <span id="modal-reservation-status-display" class="status-badge"></span></p>
+        </div>
+        
+        <div class="reservation-comment">
+          <h3>Commentaire</h3>
+          <p id="modal-reservation-comment-display">-</p>
+        </div>
+        
+        <div class="modal-actions">
+          <button class="btn btn-outline" id="close-reservation-detail-modal-btn">Fermer</button>
+          <button class="btn btn-secondary hidden" id="modal-cancel-reservation-btn">Annuler la réservation</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h3>Bistro Gourmet</h3>
+          <p>Une expérience culinaire exceptionnelle</p>
+        </div>
+        <div class="footer-links">
+          <h4>Liens rapides</h4>
+          <ul>
+            <li><a href="{% url 'frontend:index' %}">Accueil</a></li>
+            <li><a href="{% url 'frontend:menu' %}">Menu</a></li>
+            <li><a href="{% url 'frontend:reservations' %}">Réservations</a></li>
+            <li><a href="{% url 'frontend:commander' %}">Commander</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>123 Avenue de la Gastronomie<br>75001 Paris</p>
+          <p>Téléphone: 01 23 45 67 89</p>
+          <p>Email: contact@bistrogourmet.fr</p>
+        </div>
+        <div class="footer-hours">
+          <h4>Horaires d'ouverture</h4>
+          <p>Lundi - Vendredi: 12h00 - 14h30, 19h00 - 22h30</p>
+          <p>Samedi - Dimanche: 12h00 - 15h00, 19h00 - 23h00</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; {% now "Y" %} Bistro Gourmet. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/profile.js' %}"></script>
+</body>
+</html>

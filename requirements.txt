@@ -1,0 +1,17 @@
+Django==4.2.7
+djangorestframework==3.14.0
+django-cors-headers==4.3.1
+python-decouple==3.8
+Pillow==10.0.1
+django-filter==23.3
+djangorestframework-simplejwt==5.3.0
+python-dotenv==1.0.0
+
+# Base de données MySQL
+mysqlclient==2.2.0
+
+# Dépendances système
+setuptools>=65.0.0
+
+# Dépendances pour le développement
+django-extensions==3.2.3

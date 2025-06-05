@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-T">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palais Délices</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome pour les icônes (optionnel) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Styles personnalisés additionnels si nécessaire */
+        body {
+            font-family: 'Inter', sans-serif; /* Police Inter par défaut de Tailwind */
+        }
+        .nav-link {
+            @apply px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white;
+        }
+        .nav-link-active {
+            @apply bg-gray-900 text-white;
+        }
+        .btn {
+            @apply px-4 py-2 rounded-md font-semibold text-white shadow-md focus:outline-none focus:ring-2 focus:ring-opacity-75;
+        }
+        .btn-primary {
+            @apply bg-orange-500 hover:bg-orange-600 focus:ring-orange-400;
+        }
+        .btn-secondary {
+            @apply bg-gray-500 hover:bg-gray-600 focus:ring-gray-400;
+        }
+        .card {
+            @apply bg-white shadow-lg rounded-lg overflow-hidden;
+        }
+        /* Loader styles */
+        .loader {
+            border: 5px solid #f3f3f3; /* Light grey */
+            border-top: 5px solid #ea580c; /* Orange */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000; /* Ensure loader is on top */
+        }
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        /* Message Box Styles */
+        .message-box {
+            @apply fixed top-4 right-4 p-4 rounded-md shadow-lg z-50 text-white;
+        }
+        .message-box-success {
+            @apply bg-green-500;
+        }
+        .message-box-error {
+            @apply bg-red-500;
+        }
+        .message-box-info {
+            @apply bg-blue-500;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Loader global -->
+    <div id="globalLoader" class="loader hidden"></div>
+
+    <!-- Conteneur pour les messages/notifications -->
+    <div id="messageContainer" class="fixed top-5 right-5 z-50"></div>
+
+    <!-- Barre de navigation -->
+    <nav class="bg-gray-800 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-orange-400 text-2xl font-bold" onclick="navigateTo('home')">Palais Délices</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#" id="nav-home" class="nav-link nav-link-active" onclick="navigateTo('home')">Accueil</a>
+                        <a href="#" id="nav-menu" class="nav-link" onclick="navigateTo('menu')">Menu</a>
+                        <a href="#" id="nav-reservation" class="nav-link" onclick="navigateTo('reservation')">Réservation</a>
+                        <a href="#" id="nav-cart" class="nav-link" onclick="navigateTo('cart')">
+                            Panier <span id="cart-count" class="bg-orange-500 text-xs text-white rounded-full px-1.5 py-0.5 ml-1">0</span>
+                        </a>
+                        <a href="#" id="nav-login" class="nav-link" onclick="navigateTo('login')">Connexion</a>
+                        <a href="#" id="nav-account" class="nav-link hidden" onclick="navigateTo('account')">Mon Compte</a>
+                        <a href="#" id="nav-logout" class="nav-link hidden" onclick="logout()">Déconnexion</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <!-- Bouton menu mobile -->
+                    <button type="button" id="mobile-menu-button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Ouvrir le menu principal</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Menu mobile -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="nav-link block" onclick="navigateTo('home'); toggleMobileMenu();">Accueil</a>
+                <a href="#" class="nav-link block" onclick="navigateTo('menu'); toggleMobileMenu();">Menu</a>
+                <a href="#" class="nav-link block" onclick="navigateTo('reservation'); toggleMobileMenu();">Réservation</a>
+                <a href="#" class="nav-link block" onclick="navigateTo('cart'); toggleMobileMenu();">
+                    Panier <span id="mobile-cart-count" class="bg-orange-500 text-xs text-white rounded-full px-1.5 py-0.5 ml-1">0</span>
+                </a>
+                <a href="#" id="mobile-nav-login" class="nav-link block" onclick="navigateTo('login'); toggleMobileMenu();">Connexion</a>
+                <a href="#" id="mobile-nav-account" class="nav-link block hidden" onclick="navigateTo('account'); toggleMobileMenu();">Mon Compte</a>
+                <a href="#" id="mobile-nav-logout" class="nav-link block hidden" onclick="logout(); toggleMobileMenu();">Déconnexion</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu principal de la page -->
+    <main id="app" class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <!-- Le contenu des pages sera injecté ici par JavaScript -->
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="bg-gray-800 text-white text-center p-6 mt-12">
+        <p>&copy; <span id="currentYear"></span> Palais Délices. Tous droits réservés.</p>
+        <p class="text-sm text-gray-400">Développé avec passion</p>
+    </footer>
+
+    <script>
+        // Configuration de l'API
+        const API_BASE_URL = 'http://127.0.0.1:8000/api'; // Adaptez si votre backend tourne sur un autre port
+
+        // État de l'application
+        let cart = [];
+        let authToken = localStorage.getItem('authToken');
+        let refreshToken = localStorage.getItem('refreshToken');
+
+        // Éléments du DOM
+        const appContainer = document.getElementById('app');
+        const globalLoader = document.getElementById('globalLoader');
+        const messageContainer = document.getElementById('messageContainer');
+        const cartCountElement = document.getElementById('cart-count');
+        const mobileCartCountElement = document.getElementById('mobile-cart-count');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // --- Gestionnaire de messages ---
+        function showMessage(message, type = 'info', duration = 3000) {
+            const messageDiv = document.createElement('div');
+            messageDiv.textContent = message;
+            messageDiv.className = `message-box message-box-${type} mb-2 transition-opacity duration-300 ease-in-out`;
+            
+            messageContainer.appendChild(messageDiv);
+
+            // Fade in
+            setTimeout(() => messageDiv.style.opacity = '1', 10);
+            
+            // Auto-dismiss
+            setTimeout(() => {
+                messageDiv.style.opacity = '0';
+                setTimeout(() => messageDiv.remove(), 300);
+            }, duration);
+        }
+
+        // --- Loader ---
+        function showLoader() {
+            globalLoader.classList.remove('hidden');
+        }
+        function hideLoader() {
+            globalLoader.classList.add('hidden');
+        }
+
+        // --- API Helpers ---
+        async function apiRequest(endpoint, method = 'GET', data = null, requiresAuth = false) {
+            showLoader();
+            const headers = {
+                'Content-Type': 'application/json',
+            };
+            if (requiresAuth && authToken) {
+                headers['Authorization'] = `Bearer ${authToken}`;
+            }
+
+            const config = {
+                method: method,
+                headers: headers,
+            };
+
+            if (data && (method === 'POST' || method === 'PUT' || method === 'PATCH')) {
+                config.body = JSON.stringify(data);
+            }
+
+            try {
+                const response = await fetch(`${API_BASE_URL}${endpoint}`, config);
+                
+                if (response.status === 401 && requiresAuth) { // Non autorisé
+                    // Essayer de rafraîchir le token
+                    const refreshed = await refreshTokenFlow();
+                    if (refreshed) {
+                        // Réessayer la requête originale avec le nouveau token
+                        headers['Authorization'] = `Bearer ${localStorage.getItem('authToken')}`; // Mettre à jour l'authToken localement aussi
+                        const retryResponse = await fetch(`${API_BASE_URL}${endpoint}`, config);
+                        if (!retryResponse.ok) {
+                           const errorData = await retryResponse.json().catch(() => ({ detail: 'Erreur inconnue après rafraîchissement.' }));
+                           throw new Error(errorData.detail || `Erreur ${retryResponse.status} après rafraîchissement.`);
+                        }
+                        return await retryResponse.json();
+                    } else {
+                        logout(); // Si le rafraîchissement échoue, déconnecter l'utilisateur
+                        navigateTo('login');
+                        throw new Error('Session expirée. Veuillez vous reconnecter.');
+                    }
+                }
+
+                if (!response.ok) {
+                    const errorData = await response.json().catch(() => ({ detail: 'Erreur inconnue du serveur.' }));
+                    throw new Error(errorData.detail || `Erreur ${response.status}`);
+                }
+                // Pour les requêtes DELETE ou autres qui ne retournent pas de JSON
+                if (response.status === 204) { 
+                    return null;
+                }
+                return await response.json();
+            } catch (error) {
+                console.error('API Request Error:', error);
+                showMessage(`Erreur API: ${error.message}`, 'error');
+                throw error; // Propager l'erreur pour que le code appelant puisse la gérer
+            } finally {
+                hideLoader();
+            }
+        }
+
+        // --- Authentification ---
+        async function login(username, password) {
+            try {
+                const data = await apiRequest('/auth/token/', 'POST', { username, password });
+                authToken = data.access;
+                refreshToken = data.refresh;
+                localStorage.setItem('authToken', authToken);
+                localStorage.setItem('refreshToken', refreshToken);
+                updateNavUI(true);
+                navigateTo('home');
+                showMessage('Connexion réussie !', 'success');
+            } catch (error) {
+                showMessage(error.message || 'Échec de la connexion. Vérifiez vos identifiants.', 'error');
+            }
+        }
+
+        function logout() {
+            authToken = null;
+            refreshToken = null;
+            localStorage.removeItem('authToken');
+            localStorage.removeItem('refreshToken');
+            updateNavUI(false);
+            navigateTo('login');
+            showMessage('Vous avez été déconnecté.', 'info');
+        }
+
+        async function refreshTokenFlow() {
+            const currentRefreshToken = localStorage.getItem('refreshToken');
+            if (!currentRefreshToken) {
+                return false;
+            }
+            try {
+                const data = await apiRequest('/auth/token/refresh/', 'POST', { refresh: currentRefreshToken });
+                authToken = data.access; // Le refresh endpoint peut aussi retourner un nouveau refresh token
+                if(data.refresh) refreshToken = data.refresh;
+
+                localStorage.setItem('authToken', authToken);
+                if(data.refresh) localStorage.setItem('refreshToken', refreshToken);
+                return true;
+            } catch (error) {
+                console.error('Failed to refresh token:', error);
+                return false;
+            }
+        }
+        
+        function isLoggedIn() {
+            return !!localStorage.getItem('authToken');
+        }
+
+        function updateNavUI(loggedIn) {
+            const loginLink = document.getElementById('nav-login');
+            const accountLink = document.getElementById('nav-account');
+            const logoutLink = document.getElementById('nav-logout');
+            const mobileLoginLink = document.getElementById('mobile-nav-login');
+            const mobileAccountLink = document.getElementById('mobile-nav-account');
+            const mobileLogoutLink = document.getElementById('mobile-nav-logout');
+
+            if (loggedIn) {
+                loginLink.classList.add('hidden');
+                mobileLoginLink.classList.add('hidden');
+                accountLink.classList.remove('hidden');
+                logoutLink.classList.remove('hidden');
+                mobileAccountLink.classList.remove('hidden');
+                mobileLogoutLink.classList.remove('hidden');
+            } else {
+                loginLink.classList.remove('hidden');
+                mobileLoginLink.classList.remove('hidden');
+                accountLink.classList.add('hidden');
+                logoutLink.classList.add('hidden');
+                mobileAccountLink.classList.add('hidden');
+                mobileLogoutLink.classList.add('hidden');
+            }
+        }
+
+
+        // --- Gestion du Panier (localStorage) ---
+        function loadCart() {
+            const storedCart = localStorage.getItem('palaisDelicesCart');
+            if (storedCart) {
+                cart = JSON.parse(storedCart);
+            }
+            updateCartCount();
+        }
+
+        function saveCart() {
+            localStorage.setItem('palaisDelicesCart', JSON.stringify(cart));
+            updateCartCount();
+        }
+
+        function addToCart(plat) {
+            const existingItem = cart.find(item => item.id === plat.id);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ ...plat, quantity: 1 });
+            }
+            saveCart();
+            showMessage(`${plat.nom} ajouté au panier !`, 'success');
+        }
+
+        function removeFromCart(platId) {
+            cart = cart.filter(item => item.id !== platId);
+            saveCart();
+            renderCartPage(); // Re-render cart page if currently on it
+            showMessage('Article supprimé du panier.', 'info');
+        }
+        
+        function updateQuantityInCart(platId, quantity) {
+            const item = cart.find(item => item.id === platId);
+            if (item) {
+                item.quantity = parseInt(quantity, 10);
+                if (item.quantity <= 0) {
+                    removeFromCart(platId);
+                } else {
+                    saveCart();
+                    renderCartPage(); // Re-render cart page
+                }
+            }
+        }
+
+
+        function updateCartCount() {
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountElement.textContent = totalItems;
+            mobileCartCountElement.textContent = totalItems;
+        }
+
+        // --- Rendu des Pages ---
+        function renderHomePage() {
+            appContainer.innerHTML = `
+                <div class="bg-white shadow-xl rounded-lg p-8 text-center">
+                    <img src="https://placehold.co/300x200/FF8C00/FFFFFF?text=Palais+Délices" alt="Image de présentation Palais Délices" class="mx-auto mb-6 rounded-lg shadow-md" onerror="this.src='https://placehold.co/300x200/CCCCCC/FFFFFF?text=Image+Indisponible'; this.onerror=null;">
+                    <h1 class="text-4xl font-bold text-orange-600 mb-4">Bienvenue au Palais Délices</h1>
+                    <p class="text-lg text-gray-700 mb-6">Découvrez une expérience culinaire inoubliable, où saveurs traditionnelles et touches modernes se rencontrent.</p>
+                    <div class="space-x-4">
+                        <button class="btn btn-primary text-lg" onclick="navigateTo('menu')">Voir le Menu</button>
+                        <button class="btn btn-secondary text-lg" onclick="navigateTo('reservation')">Réserver une Table</button>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <h2 class="text-3xl font-semibold text-gray-800 mb-6 text-center">Nos Spécialités</h2>
+                    <div id="specialites-container" class="grid md:grid-cols-3 gap-6">
+                        <!-- Les spécialités seront chargées ici -->
+                        <p class="text-center md:col-span-3 text-gray-600">Chargement des spécialités...</p>
+                    </div>
+                </div>
+            `;
+            loadSpecialites();
+        }
+
+        async function loadSpecialites() {
+            try {
+                const plats = await apiRequest('/menu/plats/?est_specialite=true'); // Supposant que votre API supporte ce filtre
+                const container = document.getElementById('specialites-container');
+                if (plats && plats.results && plats.results.length > 0) {
+                    container.innerHTML = plats.results.slice(0,3).map(plat => `
+                        <div class="card transform hover:scale-105 transition-transform duration-300">
+                            <img src="${plat.photo_url || 'https://placehold.co/300x200/FDBF7A/FFFFFF?text=Plat+Délicieux'}" alt="${plat.nom}" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/300x200/CCCCCC/FFFFFF?text=Image+Indisponible'; this.onerror=null;">
+                            <div class="p-4">
+                                <h3 class="text-xl font-semibold text-orange-600">${plat.nom}</h3>
+                                <p class="text-gray-600 text-sm mb-2">${plat.description.substring(0,50)}...</p>
+                                <p class="text-lg font-bold text-gray-800">${parseFloat(plat.prix).toFixed(2)} DA</p>
+                            </div>
+                        </div>
+                    `).join('');
+                } else if (plats && plats.results) { // API a répondu mais pas de spécialités
+                     const allPlats = await apiRequest('/menu/plats/'); // Charger quelques plats normaux à la place
+                     if(allPlats && allPlats.results && allPlats.results.length > 0) {
+                        container.innerHTML = allPlats.results.slice(0,3).map(plat => `
+                        <div class="card transform hover:scale-105 transition-transform duration-300">
+                            <img src="${plat.photo_url || 'https://placehold.co/300x200/FDBF7A/FFFFFF?text=Plat+Délicieux'}" alt="${plat.nom}" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/300x200/CCCCCC/FFFFFF?text=Image+Indisponible'; this.onerror=null;">
+                            <div class="p-4">
+                                <h3 class="text-xl font-semibold text-orange-600">${plat.nom}</h3>
+                                <p class="text-gray-600 text-sm mb-2">${plat.description ? plat.description.substring(0,50) + '...' : 'Pas de description'}</p>
+                                <p class="text-lg font-bold text-gray-800">${parseFloat(plat.prix).toFixed(2)} DA</p>
+                            </div>
+                        </div>
+                        `).join('');
+                     } else {
+                        container.innerHTML = '<p class="text-center md:col-span-3 text-gray-600">Aucune spécialité à afficher pour le moment.</p>';
+                     }
+                } else {
+                     container.innerHTML = '<p class="text-center md:col-span-3 text-gray-600">Aucune spécialité à afficher pour le moment.</p>';
+                }
+            } catch (error) {
+                document.getElementById('specialites-container').innerHTML = '<p class="text-center md:col-span-3 text-red-500">Impossible de charger les spécialités.</p>';
+            }
+        }
+
+
+        async function renderMenuPage() {
+            appContainer.innerHTML = `
+                <div class="mb-8">
+                    <h1 class="text-3xl font-bold text-gray-800 mb-2">Notre Menu</h1>
+                    <p class="text-gray-600">Découvrez notre sélection de plats savoureux.</p>
+                </div>
+                <div class="mb-6">
+                    <label for="category-filter" class="block text-sm font-medium text-gray-700">Filtrer par catégorie:</label>
+                    <select id="category-filter" class="mt-1 block w-full md:w-1/3 pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm rounded-md shadow-sm">
+                        <option value="">Toutes les catégories</option>
+                    </select>
+                </div>
+                <div id="plats-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Les plats seront injectés ici -->
+                </div>`;
+            
+            const categorySelect = document.getElementById('category-filter');
+            categorySelect.addEventListener('change', (event) => loadPlats(event.target.value));
+
+            try {
+                const categories = await apiRequest('/menu/categories/');
+                if (categories && categories.results) {
+                     categories.results.sort((a, b) => a.ordre - b.ordre).forEach(cat => {
+                        const option = document.createElement('option');
+                        option.value = cat.id;
+                        option.textContent = cat.nom;
+                        categorySelect.appendChild(option);
+                    });
+                }
+                loadPlats(); // Charger tous les plats initialement
+            } catch (error) {
+                appContainer.innerHTML = '<p class="text-red-500">Erreur lors du chargement des catégories.</p>';
+            }
+        }
+
+        async function loadPlats(categorieId = '') {
+            const platsContainer = document.getElementById('plats-container');
+            if (!platsContainer) return; // Si le conteneur n'existe plus (changement de page rapide)
+            
+            platsContainer.innerHTML = '<p class="text-gray-600 col-span-full text-center">Chargement des plats...</p>'; // Message de chargement
+            
+            try {
+                const url = categorieId ? `/menu/plats/?categorie=${categorieId}` : '/menu/plats/';
+                const data = await apiRequest(url);
+                const plats = data.results;
+
+                if (plats && plats.length > 0) {
+                    platsContainer.innerHTML = plats.map(plat => `
+                        <div class="card flex flex-col justify-between">
+                            <div>
+                                <img src="${plat.photo_url || 'https://placehold.co/300x200/FDBF7A/FFFFFF?text=Plat'}" alt="${plat.nom}" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/300x200/CCCCCC/FFFFFF?text=Image+Indisponible'; this.onerror=null;">
+                                <div class="p-4">
+                                    <h3 class="text-xl font-semibold text-orange-600">${plat.nom}</h3>
+                                    <p class="text-xs text-gray-500 mb-1">Catégorie: ${plat.categorie_nom}</p>
+                                    <p class="text-gray-600 text-sm mb-2">${plat.description || 'Pas de description disponible.'}</p>
+                                    ${plat.ingredients ? `<p class="text-xs text-gray-500 italic">Ingrédients: ${plat.ingredients}</p>` : ''}
+                                    ${plat.allergenes ? `<p class="text-xs text-red-500 font-semibold">Allergènes: ${plat.allergenes}</p>` : ''}
+                                </div>
+                            </div>
+                            <div class="p-4 border-t border-gray-200">
+                                <div class="flex justify-between items-center">
+                                    <p class="text-lg font-bold text-gray-800">${parseFloat(plat.prix).toFixed(2)} DA</p>
+                                    <button class="btn btn-primary text-sm ${plat.disponible ? '' : 'opacity-50 cursor-not-allowed'}" onclick='addToCart(${JSON.stringify(plat)})' ${plat.disponible ? '' : 'disabled'}>
+                                        ${plat.disponible ? '<i class="fas fa-cart-plus mr-1"></i> Ajouter' : 'Indisponible'}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                } else {
+                    platsContainer.innerHTML = '<p class="text-gray-600 col-span-full text-center">Aucun plat trouvé pour cette catégorie ou le menu est vide.</p>';
+                }
+            } catch (error) {
+                platsContainer.innerHTML = '<p class="text-red-500 col-span-full text-center">Erreur lors du chargement des plats.</p>';
+            }
+        }
+
+
+        function renderCartPage() {
+            if (cart.length === 0) {
+                appContainer.innerHTML = `
+                    <div class="bg-white shadow-xl rounded-lg p-8 text-center">
+                        <h1 class="text-3xl font-bold text-gray-800 mb-4">Votre Panier est Vide</h1>
+                        <i class="fas fa-shopping-cart fa-4x text-gray-300 mb-6"></i>
+                        <p class="text-gray-600 mb-6">Parcourez notre menu pour ajouter des délices à votre commande.</p>
+                        <button class="btn btn-primary" onclick="navigateTo('menu')">Voir le Menu</button>
+                    </div>`;
+                return;
+            }
+
+            let subtotal = 0;
+            const cartItemsHTML = cart.map(item => {
+                const itemTotal = item.prix * item.quantity;
+                subtotal += itemTotal;
+                return `
+                    <div class="flex items-center justify-between py-4 border-b border-gray-200">
+                        <div class="flex items-center">
+                            <img src="${item.photo_url || 'https://placehold.co/80x80/FDBF7A/FFFFFF?text=Plat'}" alt="${item.nom}" class="w-16 h-16 object-cover rounded mr-4" onerror="this.src='https://placehold.co/80x80/CCCCCC/FFFFFF?text=Img'; this.onerror=null;">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">${item.nom}</h3>
+                                <p class="text-sm text-gray-500">${parseFloat(item.prix).toFixed(2)} DA</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="number" value="${item.quantity}" min="1" class="w-16 text-center border-gray-300 rounded-md shadow-sm focus:border-orange-300 focus:ring focus:ring-orange-200 focus:ring-opacity-50 mx-2" onchange="updateQuantityInCart(${item.id}, this.value)">
+                            <p class="w-20 text-right font-semibold text-gray-700">${itemTotal.toFixed(2)} DA</p>
+                            <button class="ml-4 text-red-500 hover:text-red-700" onclick="removeFromCart(${item.id})">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            appContainer.innerHTML = `
+                <div class="bg-white shadow-xl rounded-lg p-6">
+                    <h1 class="text-3xl font-bold text-gray-800 mb-6">Votre Panier</h1>
+                    <div id="cart-items-container">
+                        ${cartItemsHTML}
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-300">
+                        <div class="flex justify-end items-center mb-2">
+                            <span class="text-lg text-gray-700">Sous-total:</span>
+                            <span class="text-xl font-bold text-gray-800 ml-2">${subtotal.toFixed(2)} DA</span>
+                        </div>
+                        <div class="flex justify-end items-center">
+                            <span class="text-xl font-bold text-orange-600">Total:</span>
+                            <span class="text-2xl font-bold text-orange-700 ml-2">${subtotal.toFixed(2)} DA</span>
+                        </div>
+                        <div class="mt-8 text-right">
+                            <button class="btn btn-primary btn-lg" onclick="checkout()">Passer la Commande</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function checkout() {
+            // Logique de passage de commande (simplifiée)
+            // Dans une vraie application, cela impliquerait la création d'une commande via l'API
+            // et potentiellement une redirection vers une page de paiement.
+            if (!isLoggedIn()) {
+                showMessage('Veuillez vous connecter pour passer une commande.', 'info');
+                navigateTo('login', { from: 'cart' }); // Rediriger vers login, puis revenir au panier
+                return;
+            }
+
+            // Pour l'instant, on simule la commande
+            // Note: L'endpoint /api/orders/commandes/ est en erreur dans le backend.
+            // Cette partie devra être adaptée une fois le backend corrigé.
+            if (cart.length === 0) {
+                showMessage('Votre panier est vide.', 'error');
+                return;
+            }
+            
+            const orderData = {
+                // Structure attendue par votre API de création de commande
+                // Par exemple:
+                // client: userId, // L'ID de l'utilisateur connecté
+                // lignes_commande: cart.map(item => ({ plat: item.id, quantite: item.quantity, prix_unitaire: item.prix })),
+                // total: cart.reduce((sum, item) => sum + (item.prix * item.quantity), 0),
+                // statut: "en_attente", // ou autre statut initial
+                // table: null, // si la commande n'est pas liée à une table spécifique
+            };
+
+            console.log("Données de la commande à envoyer (simulation):", orderData);
+            showMessage('Fonctionnalité de commande non implémentée (endpoint backend en erreur). Simulation...', 'info');
+            
+            // Vider le panier après "commande"
+            // cart = [];
+            // saveCart();
+            // renderCartPage();
+            // navigateTo('orderSuccess'); // Ou une page de confirmation
+        }
+
+        async function renderReservationPage() {
+            // Vérifier si des tables sont disponibles avant d'afficher le formulaire
+            let tablesAvailable = false;
+            let tablesData = null;
+            try {
+                tablesData = await apiRequest('/restaurant/tables/');
+                if (tablesData && tablesData.results && tablesData.results.length > 0) {
+                    tablesAvailable = true;
+                } else if (tablesData && tablesData.count === 0) {
+                     // Aucune table configurée dans le backend
+                }
+            } catch (error) {
+                console.error("Erreur lors de la récupération des tables:", error);
+            }
+
+            let formContent = `
+                <div class="bg-white shadow-xl rounded-lg p-8">
+                    <h1 class="text-3xl font-bold text-gray-800 mb-6">Réserver une Table</h1>`;
+
+            if (!tablesData || tablesData.count === 0) {
+                 formContent += `
+                    <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-6 rounded-md" role="alert">
+                        <p class="font-bold">Information</p>
+                        <p>Aucune table n'est actuellement configurée dans notre système. La réservation en ligne est momentanément indisponible. Veuillez nous contacter directement.</p>
+                    </div>
+                 `;
+            } else if (!tablesAvailable) {
+                formContent += `
+                    <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-md" role="alert">
+                        <p class="font-bold">Désolé !</p>
+                        <p>Toutes nos tables semblent être réservées ou indisponibles pour le moment. Veuillez réessayer plus tard ou nous appeler.</p>
+                    </div>
+                `;
+            } else {
+                formContent += `
+                    <form id="reservationForm">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="res-name" class="block text-sm font-medium text-gray-700">Nom complet</label>
+                                <input type="text" id="res-name" name="name" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-orange-300 focus:ring focus:ring-orange-200 focus:ring-opacity-50 p-2">
+                            </div>
+                            <div>
+                                <label for="res-phone" class="block text-sm font-medium text-gray-700">Téléphone</label>
+                                <input type="tel" id="res-phone" name="phone" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-orange-300 focus:ring focus:ring-orange-200 focus:ring-opacity-50 p-2">
+                            </div>
+                            <div>
+                                <label for="res-date" class="block text-sm font-medium text-gray-700">Date</label>
+                                <input type="date" id="res-date" name="date" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-orange-300 focus:ring focus:ring-orange-200 focus:ring-opacity-50 p-2" min="${new Date().toISOString().split('T')[0]}">
+                            </div>
+                            <div>
+                                <label for="res-time" class="block text-sm font-medium text-gray-700">Heure</label>
+                                <input type="time" id="res-time" name="time" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-orange-300 focus:ring focus:ring-orange-200 focus:ring-opacity-50 p-2">
+                            </div>
+                            <div>
+                                <label for="res-guests" class="block text-sm font-medium text-gray-700">Nombre de personnes</label>
+                                <input type="number" id="res-guests" name="guests" min="1" max="10" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-orange-300 focus:ring focus:ring-orange-200 focus:ring-opacity-50 p-2">
+                            </div>
+                             <div>
+                                <label for="res-table" class="block text-sm font-medium text-gray-700">Table (si disponible)</label>
+                                <select id="res-table" name="table_id" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-orange-300 focus:ring focus:ring-orange-200 focus:ring-opacity-50 p-2">
+                                    <option value="">Choisir une table si possible...</option>
+                                    ${tablesData && tablesData.results ? tablesData.results.map(table => `<option value="${table.id}" ${!table.disponible ? 'disabled' : ''}>${table.numero} - ${table.capacite} places ${!table.disponible ? '(Indisponible)' : ''}</option>`).join('') : ''}
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="res-notes" class="block text-sm font-medium text-gray-700">Notes (optionnel)</label>
+                            <textarea id="res-notes" name="notes" rows="3" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-orange-300 focus:ring focus:ring-orange-200 focus:ring-opacity-50 p-2"></textarea>
+                        </div>
+                        <div class="mt-8 text-center">
+                            <button type="submit" class="btn btn-primary btn-lg">Confirmer la Réservation</button>
+                        </div>
+                    </form>
+                `;
+            }
+            formContent += `</div>`;
+            appContainer.innerHTML = formContent;
+            
+            if (tablesAvailable && document.getElementById('reservationForm')) {
+                document.getElementById('reservationForm').addEventListener('submit', handleReservationSubmit);
+            }
+        }
+        
+        async function handleReservationSubmit(event) {
+            event.preventDefault();
+            if (!isLoggedIn()) {
+                showMessage('Veuillez vous connecter pour faire une réservation.', 'info');
+                navigateTo('login', { from: 'reservation' });
+                return;
+            }
+
+            const formData = new FormData(event.target);
+            const reservationData = {
+                // Structure attendue par votre API /api/restaurant/reservations/
+                // Par exemple:
+                // client_nom: formData.get('name'), // Ou l'ID client si l'utilisateur est connecté
+                // telephone_client: formData.get('phone'),
+                // date_reservation: formData.get('date'),
+                // heure_reservation: formData.get('time'),
+                // nombre_personnes: parseInt(formData.get('guests')),
+                // notes: formData.get('notes'),
+                // table: formData.get('table_id') ? parseInt(formData.get('table_id')) : null, // ID de la table
+                // statut: "en_attente", // ou un statut par défaut
+            };
+            // Adapter les noms des champs selon votre Serializer Django pour les réservations
+            // Exemple avec des noms de champs plus probables:
+            const payload = {
+                nom_client: formData.get('name'), // Assurez-vous que ce champ existe sur le modèle/serializer
+                telephone: formData.get('phone'), // Idem
+                date_heure: `${formData.get('date')}T${formData.get('time')}:00`, // Format ISO pour DateTimeField
+                nombre_couverts: parseInt(formData.get('guests')),
+                table: formData.get('table_id') ? parseInt(formData.get('table_id')) : null,
+                notes_speciales: formData.get('notes'),
+                // 'client' (ForeignKey vers User) sera probablement géré côté backend si l'utilisateur est authentifié
+            };
+
+
+            try {
+                // L'endpoint pour créer une réservation est typiquement POST sur /api/restaurant/reservations/
+                await apiRequest('/restaurant/reservations/', 'POST', payload, true);
+                showMessage('Votre réservation a été demandée avec succès ! Nous vous contacterons pour confirmer.', 'success');
+                event.target.reset();
+                navigateTo('home'); // Ou une page de confirmation de réservation
+            } catch (error) {
+                 let errorMessage = 'Erreur lors de la soumission de la réservation.';
+                if (error.message) {
+                    // Tenter d'extraire des messages d'erreur plus spécifiques si l'API les retourne
+                    try {
+                        const errObj = JSON.parse(error.message); // Si l'erreur est un JSON stringifié
+                        errorMessage = Object.values(errObj).flat().join(' ');
+                    } catch (e) {
+                        errorMessage = error.message;
+                    }
+                }
+                showMessage(errorMessage, 'error');
+            }
+        }
+
+
+        function renderLoginPage(params = {}) {
+            appContainer.innerHTML = `
+                <div class="flex items-center justify-center min-h-[calc(100vh-200px)]">
+                    <div class="bg-white shadow-xl rounded-lg p-8 w-full max-w-md">
+                        <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Connexion</h1>
+                        <form id="loginForm">
+                            <div class="mb-4">
+                                <label for="username" class="block text-sm font-medium text-gray-700">Nom d'utilisateur ou Email</label>
+                                <input type="text" id="username" name="username" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-orange-300 focus:ring focus:ring-orange-200 focus:ring-opacity-50 p-2">
+                            </div>
+                            <div class="mb-6">
+                                <label for="password" class="block text-sm font-medium text-gray-700">Mot de passe</label>
+                                <input type="password" id="password" name="password" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-orange-300 focus:ring focus:ring-orange-200 focus:ring-opacity-50 p-2">
+                            </div>
+                            <button type="submit" class="btn btn-primary w-full">Se connecter</button>
+                        </form>
+                        <p class="mt-6 text-center text-sm text-gray-600">
+                            Pas encore de compte ? <a href="#" onclick="navigateTo('register')" class="font-medium text-orange-600 hover:text-orange-500">Inscrivez-vous</a>
+                        </p>
+                    </div>
+                </div>
+            `;
+            document.getElementById('loginForm').addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const username = event.target.username.value;
+                const password = event.target.password.value;
+                await login(username, password);
+                if (isLoggedIn() && params.from) { // Si on vient d'une autre page (ex: panier)
+                    navigateTo(params.from);
+                } else if (isLoggedIn()) {
+                    navigateTo('home');
+                }
+            });
+        }
+        
+        function renderRegisterPage() {
+             appContainer.innerHTML = `
+                <div class="flex items-center justify-center min-h-[calc(100vh-200px)]">
+                    <div class="bg-white shadow-xl rounded-lg p-8 w-full max-w-md">
+                        <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Créer un Compte</h1>
+                        <form id="registerForm">
+                            <div class="mb-4">
+                                <label for="reg-username" class="block text-sm font-medium text-gray-700">Nom d'utilisateur</label>
+                                <input type="text" id="reg-username" name="username" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm p-2">
+                            </div>
+                            <div class="mb-4">
+                                <label for="reg-email" class="block text-sm font-medium text-gray-700">Email</label>
+                                <input type="email" id="reg-email" name="email" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm p-2">
+                            </div>
+                            <div class="mb-4">
+                                <label for="reg-password" class="block text-sm font-medium text-gray-700">Mot de passe</label>
+                                <input type="password" id="reg-password" name="password" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm p-2">
+                            </div>
+                             <div class="mb-6">
+                                <label for="reg-password-confirm" class="block text-sm font-medium text-gray-700">Confirmer le mot de passe</label>
+                                <input type="password" id="reg-password-confirm" name="password_confirm" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm p-2">
+                            </div>
+                            <button type="submit" class="btn btn-primary w-full">S'inscrire</button>
+                        </form>
+                        <p class="mt-6 text-center text-sm text-gray-600">
+                            Déjà un compte ? <a href="#" onclick="navigateTo('login')" class="font-medium text-orange-600 hover:text-orange-500">Connectez-vous</a>
+                        </p>
+                    </div>
+                </div>
+            `;
+             document.getElementById('registerForm').addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const username = event.target.username.value;
+                const email = event.target.email.value;
+                const password = event.target.password.value;
+                const passwordConfirm = event.target.password_confirm.value;
+
+                if (password !== passwordConfirm) {
+                    showMessage('Les mots de passe ne correspondent pas.', 'error');
+                    return;
+                }
+                
+                try {
+                    // L'endpoint d'inscription n'est pas listé, je suppose /api/auth/users/ ou /api/auth/register/
+                    // Vous devrez adapter cet endpoint. Pour l'exemple, je simule.
+                    // await apiRequest('/auth/users/', 'POST', { username, email, password }); 
+                    console.log("Tentative d'inscription (simulation):", { username, email, password });
+                    showMessage("Fonctionnalité d'inscription non implémentée ou endpoint inconnu. Simulation...", 'info');
+                    // Si l'inscription réussit et connecte automatiquement l'utilisateur :
+                    // await login(username, password); 
+                    // navigateTo('home');
+                    // Ou rediriger vers la page de connexion :
+                    // showMessage('Inscription réussie ! Vous pouvez maintenant vous connecter.', 'success');
+                    // navigateTo('login');
+                } catch (error) {
+                    showMessage(error.message || 'Échec de l\'inscription.', 'error');
+                }
+            });
+        }
+
+
+        function renderAccountPage() {
+            if (!isLoggedIn()) {
+                navigateTo('login');
+                return;
+            }
+            // Simuler la récupération des informations du compte
+            // Dans une vraie app, vous auriez un endpoint comme /api/auth/user/
+            const user = { // Exemple de données utilisateur
+                username: localStorage.getItem('username') || 'Utilisateur Test', // Stocker le username au login serait mieux
+                email: 'utilisateur@example.com',
+            };
+
+            appContainer.innerHTML = `
+                <div class="bg-white shadow-xl rounded-lg p-8">
+                    <h1 class="text-3xl font-bold text-gray-800 mb-6">Mon Compte</h1>
+                    <div class="mb-6">
+                        <h2 class="text-xl font-semibold text-gray-700">Informations Personnelles</h2>
+                        <p><strong>Nom d'utilisateur:</strong> ${user.username}</p>
+                        <p><strong>Email:</strong> ${user.email}</p>
+                        {/* Formulaire pour modifier les infos ici */}
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-semibold text-gray-700">Historique des Commandes</h2>
+                        <p class="text-gray-600 italic">
+                            Le module de commandes est actuellement en maintenance (Erreur: ImproperlyConfigured sur /api/orders/commandes/).
+                            L'historique sera disponible une fois le problème résolu.
+                        </p>
+                        {/* Liste des commandes ici quand l'API sera fonctionnelle */}
+                    </div>
+                     <div class="mt-8">
+                        <h2 class="text-xl font-semibold text-gray-700">Mes Réservations</h2>
+                        <div id="user-reservations-container">
+                            <p class="text-gray-600">Chargement des réservations...</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            loadUserReservations();
+        }
+
+        async function loadUserReservations() {
+            if (!isLoggedIn()) return;
+            const container = document.getElementById('user-reservations-container');
+            try {
+                // Supposons un endpoint comme /api/restaurant/reservations/?client_id=X ou que l'API filtre par utilisateur authentifié
+                const reservations = await apiRequest('/restaurant/reservations/', 'GET', null, true);
+                if (reservations && reservations.results && reservations.results.length > 0) {
+                    // Filtrer côté client si l'API ne le fait pas (pas idéal, mais pour l'exemple)
+                    // Cela suppose que vous avez un moyen d'identifier l'utilisateur actuel (par ex. un endpoint /api/auth/user/ qui renvoie l'ID)
+                    // Pour l'instant, on affiche toutes les réservations retournées par l'API si l'utilisateur est connecté.
+                    container.innerHTML = `
+                        <ul class="space-y-3">
+                            ${reservations.results.map(res => `
+                                <li class="p-3 bg-gray-50 rounded-md border border-gray-200">
+                                    <p><strong>Date:</strong> ${new Date(res.date_heure || res.date_reservation).toLocaleDateString('fr-FR')} à ${new Date(res.date_heure || res.date_reservation).toLocaleTimeString('fr-FR', {hour: '2-digit', minute:'2-digit'})}</p>
+                                    <p><strong>Personnes:</strong> ${res.nombre_couverts || res.nombre_personnes}</p>
+                                    <p><strong>Statut:</strong> <span class="font-semibold ${res.statut === 'confirmée' ? 'text-green-600' : 'text-yellow-600'}">${res.statut || 'En attente'}</span></p>
+                                    ${res.table ? `<p><strong>Table:</strong> ${res.table_numero || res.table}</p>` : ''}
+                                </li>
+                            `).join('')}
+                        </ul>
+                    `;
+                } else {
+                    container.innerHTML = '<p class="text-gray-600">Vous n\'avez aucune réservation pour le moment.</p>';
+                }
+            } catch (error) {
+                container.innerHTML = '<p class="text-red-500">Impossible de charger vos réservations.</p>';
+            }
+        }
+        
+        function renderOrderTrackingPage() {
+             appContainer.innerHTML = `
+                <div class="bg-white shadow-xl rounded-lg p-8">
+                    <h1 class="text-3xl font-bold text-gray-800 mb-6">Suivi de Commande</h1>
+                    <p class="text-gray-600 italic mb-4">
+                        Le module de commandes est actuellement en maintenance. Cette fonctionnalité sera disponible prochainement.
+                    </p>
+                    <form id="orderTrackingForm">
+                        <div class="mb-4">
+                            <label for="orderId" class="block text-sm font-medium text-gray-700">Numéro de Commande</label>
+                            <input type="text" id="orderId" name="orderId" class="mt-1 block w-full md:w-1/2 border-gray-300 rounded-md shadow-sm p-2" disabled>
+                        </div>
+                        <button type="submit" class="btn btn-primary" disabled>Suivre ma Commande</button>
+                    </form>
+                    <div id="orderDetails" class="mt-6">
+                        {/* Les détails de la commande s'afficheront ici */}
+                    </div>
+                </div>
+            `;
+            // La logique de suivi sera ajoutée quand l'API commandes sera fonctionnelle.
+        }
+
+
+        // --- Routage simple ---
+        const routes = {
+            'home': renderHomePage,
+            'menu': renderMenuPage,
+            'cart': renderCartPage,
+            'reservation': renderReservationPage,
+            'login': renderLoginPage,
+            'register': renderRegisterPage,
+            'account': renderAccountPage,
+            'order-tracking': renderOrderTrackingPage,
+            // 'orderSuccess': renderOrderSuccessPage, // Exemple
+        };
+
+        function navigateTo(page, params = {}) {
+            // Mettre à jour le style du lien de navigation actif
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('nav-link-active', 'bg-gray-900', 'text-white'));
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.add('text-gray-300', 'hover:bg-gray-700', 'hover:text-white'));
+            
+            const activeLink = document.getElementById(`nav-${page}`);
+            if (activeLink) {
+                activeLink.classList.add('nav-link-active', 'bg-gray-900', 'text-white');
+                activeLink.classList.remove('text-gray-300', 'hover:bg-gray-700', 'hover:text-white');
+            }
+
+
+            if (routes[page]) {
+                // Mettre à jour l'URL (optionnel, pour la navigation par l'historique du navigateur)
+                // history.pushState({ page: page, params: params }, page, `#${page}`);
+                // Pour la simplicité, on ne gère pas l'historique ici pour le moment.
+                // Si vous voulez gérer l'historique, il faudra aussi écouter l'événement `popstate`.
+                
+                routes[page](params);
+            } else {
+                appContainer.innerHTML = '<h1 class="text-2xl text-red-600">Page non trouvée</h1>';
+            }
+            window.scrollTo(0, 0); // Remonter en haut de la page
+        }
+        
+        // Gestion du menu mobile
+        mobileMenuButton.addEventListener('click', toggleMobileMenu);
+
+        function toggleMobileMenu() {
+            const iconOpen = mobileMenuButton.querySelector('svg:first-child');
+            const iconClose = mobileMenuButton.querySelector('svg:last-child');
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'true');
+            } else {
+                mobileMenu.classList.add('hidden');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+
+        // --- Initialisation ---
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCart();
+            updateNavUI(isLoggedIn());
+            
+            // Gérer la navigation initiale basée sur le hash de l'URL (si présent)
+            // const initialPage = window.location.hash.substring(1) || 'home';
+            // navigateTo(initialPage);
+            // Pour l'instant, on charge toujours la page d'accueil par défaut.
+            navigateTo('home'); 
+        });
+
+    </script>
+</body>
+</html>

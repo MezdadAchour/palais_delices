@@ -1,0 +1,237 @@
+/* Profile Page Styles */
+
+.profile-section {
+  padding: var(--spacing-xxl) 0;
+}
+
+.profile-container {
+  display: flex;
+  gap: var(--spacing-xl);
+}
+
+/* Profile Sidebar */
+.profile-sidebar {
+  width: 280px;
+  background-color: var(--background);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-lg);
+}
+
+.profile-user {
+  text-align: center;
+  padding-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--border);
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 auto var(--spacing-md) auto;
+}
+
+.profile-user h3 {
+  margin-bottom: var(--spacing-xs);
+}
+
+.profile-user p {
+  color: var(--text-medium);
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+
+.profile-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-nav li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.profile-nav a {
+  display: block;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.profile-nav a:hover {
+  background-color: var(--background-light);
+  color: var(--primary);
+}
+
+.profile-nav a.active {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Profile Content */
+.profile-content {
+  flex: 1;
+  background-color: var(--background);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-xl);
+}
+
+.profile-tab {
+  display: none;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.profile-tab.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.profile-tab h2 {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Orders List */
+.orders-list,
+.user-orders-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.order-card {
+  background-color: var(--background-light);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-medium);
+  cursor: pointer;
+}
+
+.order-card:hover {
+  transform: translateY(-5px);
+}
+
+.order-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.order-id {
+  color: var(--text-medium);
+  font-size: 0.875rem;
+}
+
+.order-date {
+  margin-bottom: var(--spacing-sm);
+}
+
+.order-items-count {
+  color: var(--text-medium);
+  margin-bottom: var(--spacing-sm);
+}
+
+.order-total {
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.order-status {
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.order-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-md);
+}
+
+/* Order Detail Modal */
+.order-details-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-lg);
+}
+
+.order-details-info p {
+  margin-bottom: var(--spacing-sm);
+}
+
+.order-items {
+  margin-bottom: var(--spacing-lg);
+}
+
+.order-items h3 {
+  margin-bottom: var(--spacing-md);
+}
+
+.order-extra-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.order-payment-info h3,
+.order-comment h3 {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Reservation Detail Modal */
+.reservation-details-info p {
+  margin-bottom: var(--spacing-sm);
+}
+
+.reservation-comment h3 {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .profile-container {
+    flex-direction: column;
+  }
+  
+  .profile-sidebar {
+    width: 100%;
+  }
+  
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+    font-size: 1.5rem;
+  }
+  
+  .orders-list,
+  .user-orders-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .order-extra-info {
+    grid-template-columns: 1fr;
+  }
+}

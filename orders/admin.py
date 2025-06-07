@@ -16,13 +16,16 @@ class CommandeAdmin(admin.ModelAdmin):
     search_fields = ['numero_commande', 'user__nom', 'user__email']
     list_editable = ['statut']
     date_hierarchy = 'dateCommande'
-    readonly_fields = ['numero_commande', 'created_at', 'updated_at']
+    
+    # Correction 1: Ajouter 'dateCommande' aux champs en lecture seule
+    readonly_fields = ['numero_commande', 'dateCommande', 'created_at', 'updated_at']
     
     inlines = [LigneCommandeInline]
     
     fieldsets = (
         ('Informations commande', {
-            'fields': ('numero_commande', 'user', 'dateCommande', 'statut')
+            # Correction 2: Retirer 'dateCommande' des champs modifiables
+            'fields': ('numero_commande', 'user', 'statut')
         }),
         ('Montants', {
             'fields': ('montant', 'fraisLivraison')
@@ -35,7 +38,8 @@ class CommandeAdmin(admin.ModelAdmin):
             'classes': ('collapse',)
         }),
         ('Métadonnées', {
-            'fields': ('created_at', 'updated_at'),
+            # On affiche 'dateCommande' ici avec les autres champs non modifiables
+            'fields': ('dateCommande', 'created_at', 'updated_at'),
             'classes': ('collapse',)
         }),
     )

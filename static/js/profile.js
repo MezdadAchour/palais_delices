@@ -556,11 +556,21 @@ async function setupProfileForm() {
     try {
       // L'endpoint doit correspondre à votre urls.py pour ProfileUpdateSerializer (souvent /api/auth/profile/ ou /api/auth/profile/update/)
       const response = await apiRequest(
-        "/auth/profile/update/",
+        "/auth/profile/",
         "PATCH",
         cleanProfileData
       );
-      localStorage.setItem("user", JSON.stringify(response));
+      // On vérifie que la réponse contient bien l'objet 'user' avant de le sauvegarder
+      if (response && response.user) {
+        localStorage.setItem("user", JSON.stringify(response.user)); // <--- Ligne corrigée
+      } else {
+        // Au cas où l'API renverrait une structure inattendue
+        console.error(
+          "La réponse de l'API ne contient pas d'objet utilisateur valide.",
+          response
+        );
+        throw new Error("Réponse invalide du serveur après la mise à jour.");
+      }
       loadUserProfile();
       successElement.textContent =
         "Vos informations ont été mises à jour avec succès!";

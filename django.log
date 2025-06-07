@@ -4579,3 +4579,1090 @@ Not Found: /api/auth/profile/update/
 "GET /admin/jsi18n/ HTTP/1.1" 200 8621
 "GET /admin/restaurant/table/ HTTP/1.1" 200 16867
 "GET /admin/jsi18n/ HTTP/1.1" 200 8621
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET /admin/restaurant/table/ HTTP/1.1" 200 16867
+"GET /admin/ HTTP/1.1" 200 13992
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/home.css HTTP/1.1" 304 0
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /static/css/normalize.css HTTP/1.1" 304 0
+"GET /static/js/main.js HTTP/1.1" 304 0
+"GET /static/js/home.js HTTP/1.1" 304 0
+"GET /menu/ HTTP/1.1" 200 5441
+"GET /static/css/menu.css HTTP/1.1" 304 0
+"GET /static/js/menu.js HTTP/1.1" 304 0
+"GET /api/menu/categories/ HTTP/1.1" 200 168
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET /admin/menu/categorie/ HTTP/1.1" 200 15412
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+"GET /static/admin/css/forms.css HTTP/1.1" 304 0
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+"GET /static/admin/js/core.js HTTP/1.1" 304 0
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /static/admin/img/search.svg HTTP/1.1" 304 0
+"GET /static/admin/js/theme.js HTTP/1.1" 304 0
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+"GET /static/admin/js/filters.js HTTP/1.1" 304 0
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+"GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+"GET /admin/menu/categorie/add/ HTTP/1.1" 200 13132
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+"GET /menu/?categorie=2 HTTP/1.1" 200 5441
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET /api/menu/categories/ HTTP/1.1" 200 168
+"POST /admin/menu/categorie/add/ HTTP/1.1" 302 0
+"GET /admin/menu/categorie/ HTTP/1.1" 200 16138
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+"GET /admin/menu/categorie/2/change/ HTTP/1.1" 200 13397
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"POST /admin/menu/categorie/2/change/ HTTP/1.1" 302 0
+"GET /admin/menu/categorie/ HTTP/1.1" 200 16141
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/menu/categorie/add/ HTTP/1.1" 200 13132
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"POST /admin/menu/categorie/add/ HTTP/1.1" 302 0
+"GET /admin/menu/categorie/ HTTP/1.1" 200 16622
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/menu/categorie/add/ HTTP/1.1" 200 13132
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"POST /admin/menu/categorie/add/ HTTP/1.1" 302 0
+"GET /admin/menu/categorie/ HTTP/1.1" 200 17114
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/css/main.css HTTP/1.1" 200 7978
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/css/home.css HTTP/1.1" 200 3957
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET /menu/?categorie=2 HTTP/1.1" 200 5441
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+"GET /menu/?categorie=2 HTTP/1.1" 200 5441
+"GET /menu/?categorie=2 HTTP/1.1" 200 5441
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/menu.css HTTP/1.1" 200 6985
+"GET /static/css/main.css HTTP/1.1" 200 7978
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/js/menu.js HTTP/1.1" 200 19590
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/main.css HTTP/1.1" 200 14547
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/js/main.js HTTP/1.1" 200 18531
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET /menu/ HTTP/1.1" 200 5441
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+"GET /reservations/ HTTP/1.1" 200 9678
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /static/js/reservation.js HTTP/1.1" 304 0
+"GET /static/css/reservation.css HTTP/1.1" 304 0
+"GET /menu/ HTTP/1.1" 200 5441
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET /reservations/ HTTP/1.1" 200 9678
+"GET /commander/ HTTP/1.1" 200 12937
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /static/css/commande.css HTTP/1.1" 304 0
+"GET /static/js/commande.js HTTP/1.1" 304 0
+"GET /reservations/ HTTP/1.1" 200 9678
+"GET /menu/ HTTP/1.1" 200 5441
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET / HTTP/1.1" 200 5854
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/css/main.css HTTP/1.1" 200 14547
+"GET /static/js/main.js HTTP/1.1" 200 18531
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/main.css HTTP/1.1" 200 14547
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/js/main.js HTTP/1.1" 200 18531
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/css/main.css HTTP/1.1" 200 12290
+"GET /static/js/main.js HTTP/1.1" 200 18531
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/css/main.css HTTP/1.1" 200 15095
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/js/home.js HTTP/1.1" 200 1856
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET /menu/ HTTP/1.1" 200 5441
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET /reservations/ HTTP/1.1" 200 9678
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /commander/ HTTP/1.1" 200 12937
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /menu/ HTTP/1.1" 200 5441
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET /menu/ HTTP/1.1" 200 5441
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/main.css HTTP/1.1" 200 15589
+"GET /static/css/menu.css HTTP/1.1" 200 6985
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/js/menu.js HTTP/1.1" 200 19590
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET /reservations/ HTTP/1.1" 200 9678
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /commander/ HTTP/1.1" 200 12937
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /login/ HTTP/1.1" 200 4290
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /static/css/auth.css HTTP/1.1" 304 0
+"GET /static/js/auth.js HTTP/1.1" 304 0
+"GET /register/ HTTP/1.1" 200 4890
+"GET /static/css/main.css HTTP/1.1" 304 0
+Not Found: /register/index.html
+"GET /register/index.html HTTP/1.1" 404 4535
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/main.css HTTP/1.1" 200 15588
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/js/home.js HTTP/1.1" 200 1856
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/css/main.css HTTP/1.1" 200 15588
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/js/main.js HTTP/1.1" 200 18531
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/css/main.css HTTP/1.1" 200 15588
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/js/main.js HTTP/1.1" 200 18531
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/main.css HTTP/1.1" 200 15588
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/js/main.js HTTP/1.1" 200 18531
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET /static/css/main.css HTTP/1.1" 304 0
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+"GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4622
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/main.css HTTP/1.1" 200 15610
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/js/main.js HTTP/1.1" 200 18531
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/main.css HTTP/1.1" 200 15589
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/js/home.js HTTP/1.1" 200 1856
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET /menu/ HTTP/1.1" 200 5441
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET /reservations/ HTTP/1.1" 200 9678
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /commander/ HTTP/1.1" 200 12937
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /login/ HTTP/1.1" 200 4290
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /login/ HTTP/1.1" 200 4290
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /commander/ HTTP/1.1" 200 12937
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /menu/ HTTP/1.1" 200 5441
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET /menu/ HTTP/1.1" 200 5441
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+"GET /reservations/ HTTP/1.1" 200 9678
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /commander/ HTTP/1.1" 200 12937
+"GET /static/css/main.css HTTP/1.1" 200 15583
+"GET /commander/ HTTP/1.1" 200 12937
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/main.css HTTP/1.1" 200 15583
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/css/commande.css HTTP/1.1" 200 6956
+"GET /static/js/commande.js HTTP/1.1" 200 23365
+"GET /reservations/ HTTP/1.1" 200 9678
+"GET /static/css/main.css HTTP/1.1" 304 0
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET /commander/ HTTP/1.1" 200 12937
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/css/main.css HTTP/1.1" 200 15583
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /reservations/ HTTP/1.1" 200 9678
+"GET /static/css/main.css HTTP/1.1" 304 0
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET /commander/ HTTP/1.1" 200 12937
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /reservations/ HTTP/1.1" 200 9678
+"GET /static/css/main.css HTTP/1.1" 200 15583
+"GET /menu/ HTTP/1.1" 200 5441
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/css/main.css HTTP/1.1" 200 15621
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/css/main.css HTTP/1.1" 200 15621
+"GET /static/js/main.js HTTP/1.1" 200 18531
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/css/main.css HTTP/1.1" 200 15621
+"GET /static/css/home.css HTTP/1.1" 200 3957
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/css/main.css HTTP/1.1" 200 15621
+"GET /static/js/main.js HTTP/1.1" 200 18531
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/css/main.css HTTP/1.1" 200 15621
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/js/main.js HTTP/1.1" 200 18531
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/css/main.css HTTP/1.1" 200 15131
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/css/main.css HTTP/1.1" 200 15131
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/css/main.css HTTP/1.1" 200 15131
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/js/main.js HTTP/1.1" 200 18531
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET /menu/ HTTP/1.1" 200 5441
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+"GET /reservations/ HTTP/1.1" 200 9678
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /commander/ HTTP/1.1" 200 12937
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /login/ HTTP/1.1" 200 4290
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 5854
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 5854
+"GET /menu/ HTTP/1.1" 200 5441
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+Not Found: /menu/index.html
+"GET /menu/index.html HTTP/1.1" 404 4523
+"GET /reservations/ HTTP/1.1" 200 9678
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 5854
+"GET / HTTP/1.1" 200 5854
+"GET /commander/ HTTP/1.1" 200 12937
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 5854
+"GET /login/ HTTP/1.1" 200 4290
+"GET /static/css/main.css HTTP/1.1" 304 0
+Not Found: /login/index.html
+"GET /login/index.html HTTP/1.1" 404 4526
+"GET /reservations/ HTTP/1.1" 200 9678
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 5854
+"GET /menu/ HTTP/1.1" 200 5441
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+Not Found: /menu/index.html
+"GET /menu/index.html HTTP/1.1" 404 4523
+Not Found: /menu/index.html
+"GET /menu/index.html HTTP/1.1" 404 4523
+"GET /menu/ HTTP/1.1" 200 5432
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/css/main.css HTTP/1.1" 200 15131
+"GET /static/css/menu.css HTTP/1.1" 200 6985
+"GET /static/js/menu.js HTTP/1.1" 200 19590
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET / HTTP/1.1" 200 5854
+"GET /menu/ HTTP/1.1" 200 5432
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET / HTTP/1.1" 200 5854
+"GET /reservations/ HTTP/1.1" 200 9678
+"GET / HTTP/1.1" 200 5854
+"GET /commander/ HTTP/1.1" 200 12937
+"GET / HTTP/1.1" 200 5854
+"GET /login/ HTTP/1.1" 200 4290
+Not Found: /login/index.html
+"GET /login/index.html HTTP/1.1" 404 4526
+"GET /login/ HTTP/1.1" 200 4281
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 5854
+"GET /register/ HTTP/1.1" 200 4881
+"GET / HTTP/1.1" 200 5854
+"GET /menu/ HTTP/1.1" 200 5432
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /reservations/ HTTP/1.1" 200 9678
+"GET / HTTP/1.1" 200 5854
+"GET /menu/?categorie=1 HTTP/1.1" 200 5432
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET /menu/?categorie=3 HTTP/1.1" 200 5432
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET /menu/?categorie=4 HTTP/1.1" 200 5432
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET /reservations/ HTTP/1.1" 200 9678
+"GET / HTTP/1.1" 200 5854
+"GET /reservations/ HTTP/1.1" 200 9678
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /menu/ HTTP/1.1" 200 5432
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 5854
+"GET / HTTP/1.1" 200 5854
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/main.css HTTP/1.1" 200 15131
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/js/main.js HTTP/1.1" 200 18531
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET /menu/ HTTP/1.1" 200 5432
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET /reservations/ HTTP/1.1" 200 9678
+"GET /commander/ HTTP/1.1" 200 12937
+"GET /login/ HTTP/1.1" 200 4281
+"GET / HTTP/1.1" 200 5854
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/css/main.css HTTP/1.1" 200 15165
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/js/home.js HTTP/1.1" 200 1856
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/css/main.css HTTP/1.1" 200 15256
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/js/main.js HTTP/1.1" 200 18531
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/css/main.css HTTP/1.1" 200 15253
+"GET /static/js/main.js HTTP/1.1" 200 18531
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/main.css HTTP/1.1" 200 15312
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/js/main.js HTTP/1.1" 200 18531
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET /menu/ HTTP/1.1" 200 5432
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+"GET /menu/ HTTP/1.1" 200 5432
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/menu.css HTTP/1.1" 200 6985
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/css/main.css HTTP/1.1" 200 15253
+"GET /static/js/menu.js HTTP/1.1" 200 19590
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET /reservations/ HTTP/1.1" 200 9678
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /menu/ HTTP/1.1" 200 5432
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/css/main.css HTTP/1.1" 200 15250
+"GET /static/js/main.js HTTP/1.1" 200 18531
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET /menu/ HTTP/1.1" 200 5432
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /api/menu/categories/ HTTP/1.1" 200 527
+"GET /api/menu/plats/ HTTP/1.1" 200 301
+"GET /reservations/ HTTP/1.1" 200 9678
+"GET /commander/ HTTP/1.1" 200 12937
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /login/ HTTP/1.1" 200 4281
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/main.css HTTP/1.1" 304 0
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/home.css HTTP/1.1" 200 3957
+"GET /static/js/home.js HTTP/1.1" 200 1856
+"GET /static/css/main.css HTTP/1.1" 200 15250
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET /menu/?categorie=1 HTTP/1.1" 200 5432
+"GET /api/menu/plats/ HTTP/1.1" 200 7613
+"GET /api/menu/categories/ HTTP/1.1" 200 772
+"GET /menu/ HTTP/1.1" 200 5432
+"GET /api/menu/categories/ HTTP/1.1" 200 772
+"GET /api/menu/plats/ HTTP/1.1" 200 7613
+"GET /reservations/ HTTP/1.1" 200 9678
+"GET / HTTP/1.1" 200 5854
+"GET /menu/ HTTP/1.1" 200 5432
+"GET /api/menu/categories/ HTTP/1.1" 200 772
+"GET /api/menu/plats/ HTTP/1.1" 200 7613
+"GET /menu/ HTTP/1.1" 200 5432
+"GET /api/menu/categories/ HTTP/1.1" 200 772
+"GET /api/menu/plats/ HTTP/1.1" 200 7613
+"GET / HTTP/1.1" 200 5854
+"GET /menu/?categorie=2 HTTP/1.1" 200 5432
+"GET /api/menu/categories/ HTTP/1.1" 200 772
+"GET /api/menu/plats/ HTTP/1.1" 200 7613
+"GET / HTTP/1.1" 200 5854
+"GET /menu/ HTTP/1.1" 200 5432
+"GET /api/menu/categories/ HTTP/1.1" 200 772
+"GET /api/menu/plats/ HTTP/1.1" 200 7613
+"GET /reservations/ HTTP/1.1" 200 9678
+"GET /menu/ HTTP/1.1" 200 5432
+"GET /api/menu/categories/ HTTP/1.1" 200 772
+"GET /api/menu/plats/ HTTP/1.1" 200 7613
+Not Found: /menu/commander.html
+"GET /menu/commander.html HTTP/1.1" 404 4535
+"GET /menu/ HTTP/1.1" 200 5430
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/main.css HTTP/1.1" 200 15250
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/css/menu.css HTTP/1.1" 200 6985
+"GET /static/js/menu.js HTTP/1.1" 200 19590
+"GET /api/menu/plats/ HTTP/1.1" 200 7613
+"GET /api/menu/categories/ HTTP/1.1" 200 772
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET /commander/ HTTP/1.1" 200 12937
+"GET /login/ HTTP/1.1" 200 4281
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 138
+"GET /register/ HTTP/1.1" 200 4881
+"POST /api/auth/register/ HTTP/1.1" 201 833
+"GET /login/ HTTP/1.1" 200 4281
+"GET /static/css/main.css HTTP/1.1" 304 0
+"POST /api/auth/login/ HTTP/1.1" 200 1025
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET / HTTP/1.1" 200 5854
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /menu/ HTTP/1.1" 200 5430
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/menu/plats/ HTTP/1.1" 200 7613
+"GET /api/menu/categories/ HTTP/1.1" 200 772
+"GET /commander/ HTTP/1.1" 200 12937
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"POST /api/orders/commandes/ HTTP/1.1" 201 3008
+"GET /profile/ HTTP/1.1" 200 11626
+"GET /static/css/profile.css HTTP/1.1" 304 0
+"GET /static/js/profile.js HTTP/1.1" 304 0
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/orders/commandes/my_orders/ HTTP/1.1" 200 2977
+"GET /admin/orders/commande/ HTTP/1.1" 200 35064
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+Internal Server Error: /admin/orders/commande/23/change/
+Traceback (most recent call last):
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 809, in get_form
+    return modelform_factory(self.model, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\forms\models.py", line 642, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\forms\models.py", line 300, in __new__
+    fields = fields_for_model(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\forms\models.py", line 198, in fields_for_model
+    raise FieldError(
+django.core.exceptions.FieldError: 'dateCommande' cannot be specified for Commande model form as it is a non-editable field
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 1889, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 1782, in _changeform_view
+    ModelForm = self.get_form(
+                ^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 811, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: 'dateCommande' cannot be specified for Commande model form as it is a non-editable field. Check fields/fieldsets/exclude attributes of class CommandeAdmin.
+"GET /admin/orders/commande/23/change/ HTTP/1.1" 500 148195
+"GET /admin/orders/commande/ HTTP/1.1" 200 35064
+Internal Server Error: /admin/orders/commande/23/change/
+Traceback (most recent call last):
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 809, in get_form
+    return modelform_factory(self.model, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\forms\models.py", line 642, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\forms\models.py", line 300, in __new__
+    fields = fields_for_model(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\forms\models.py", line 198, in fields_for_model
+    raise FieldError(
+django.core.exceptions.FieldError: 'dateCommande' cannot be specified for Commande model form as it is a non-editable field
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 1889, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 1782, in _changeform_view
+    ModelForm = self.get_form(
+                ^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 811, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: 'dateCommande' cannot be specified for Commande model form as it is a non-editable field. Check fields/fieldsets/exclude attributes of class CommandeAdmin.
+"GET /admin/orders/commande/23/change/ HTTP/1.1" 500 148195
+"GET /admin/orders/commande/ HTTP/1.1" 200 35064
+Internal Server Error: /admin/orders/commande/22/change/
+Traceback (most recent call last):
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 809, in get_form
+    return modelform_factory(self.model, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\forms\models.py", line 642, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\forms\models.py", line 300, in __new__
+    fields = fields_for_model(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\forms\models.py", line 198, in fields_for_model
+    raise FieldError(
+django.core.exceptions.FieldError: 'dateCommande' cannot be specified for Commande model form as it is a non-editable field
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 1889, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 1782, in _changeform_view
+    ModelForm = self.get_form(
+                ^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 811, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: 'dateCommande' cannot be specified for Commande model form as it is a non-editable field. Check fields/fieldsets/exclude attributes of class CommandeAdmin.
+"GET /admin/orders/commande/22/change/ HTTP/1.1" 500 148186
+"GET /admin/orders/commande/ HTTP/1.1" 200 35064
+"POST /admin/orders/commande/ HTTP/1.1" 302 0
+"GET /admin/orders/commande/ HTTP/1.1" 200 35276
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /profile/ HTTP/1.1" 200 11626
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/main.css HTTP/1.1" 200 15250
+"GET /static/css/profile.css HTTP/1.1" 200 4005
+"GET /static/js/profile.js HTTP/1.1" 200 25824
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/orders/commandes/my_orders/ HTTP/1.1" 200 2979
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET /admin/menu/plat/ HTTP/1.1" 200 31247
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/menu/plat/5/change/ HTTP/1.1" 200 19370
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /static/admin/js/collapse.js HTTP/1.1" 304 0
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+"GET /admin/menu/plat/ HTTP/1.1" 200 31247
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/menu/plat/5/change/ HTTP/1.1" 200 19370
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/menu/menu/ HTTP/1.1" 200 14824
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/menu/categorie/ HTTP/1.1" 200 17402
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/menu/categorie/5/change/ HTTP/1.1" 200 13385
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/menu/categorie/ HTTP/1.1" 200 17402
+"GET /admin/authentication/utilisateur/ HTTP/1.1" 200 27629
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/authentication/utilisateur/5/change/ HTTP/1.1" 200 33108
+"GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+"GET /static/admin/js/calendar.js HTTP/1.1" 200 8466
+"GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+"GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15292
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+"GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+"GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+"GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+"GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+"GET /admin/authentication/utilisateur/ HTTP/1.1" 200 27629
+"GET /admin/orders/commande/ HTTP/1.1" 200 35118
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+Internal Server Error: /admin/orders/commande/21/change/
+Traceback (most recent call last):
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 809, in get_form
+    return modelform_factory(self.model, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\forms\models.py", line 642, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\forms\models.py", line 300, in __new__
+    fields = fields_for_model(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\forms\models.py", line 198, in fields_for_model
+    raise FieldError(
+django.core.exceptions.FieldError: 'dateCommande' cannot be specified for Commande model form as it is a non-editable field
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 1889, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 1782, in _changeform_view
+    ModelForm = self.get_form(
+                ^^^^^^^^^^^^^^
+  File "C:\Users\moi\Desktop\palais_delices\palais_delices\venv\Lib\site-packages\django\contrib\admin\options.py", line 811, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: 'dateCommande' cannot be specified for Commande model form as it is a non-editable field. Check fields/fieldsets/exclude attributes of class CommandeAdmin.
+"GET /admin/orders/commande/21/change/ HTTP/1.1" 500 148180
+C:\Users\moi\Desktop\palais_delices\palais_delices\orders\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\moi\Desktop\palais_delices\palais_delices\orders\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\moi\Desktop\palais_delices\palais_delices\orders\admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/orders/commande/21/change/ HTTP/1.1" 200 45376
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2694
+"GET /static/admin/js/collapse.js HTTP/1.1" 200 1803
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2929
+"GET /static/admin/js/core.js HTTP/1.1" 200 5682
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+"GET /static/admin/js/inlines.js HTTP/1.1" 200 15526
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 8943
+"GET /static/admin/js/actions.js HTTP/1.1" 200 7872
+"GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+"GET /static/admin/css/forms.css HTTP/1.1" 200 9047
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+"GET /static/admin/css/widgets.css HTTP/1.1" 200 11900
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+"GET /static/admin/css/responsive.css HTTP/1.1" 200 18533
+"GET /static/admin/css/base.css HTTP/1.1" 200 21207
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 292458
+"GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+"GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"POST /admin/orders/commande/21/change/ HTTP/1.1" 302 0
+"GET /admin/orders/commande/ HTTP/1.1" 200 35358
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /profile/ HTTP/1.1" 200 11626
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/main.css HTTP/1.1" 200 15250
+"GET /static/css/profile.css HTTP/1.1" 200 4005
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/js/profile.js HTTP/1.1" 200 25824
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/orders/commandes/my_orders/ HTTP/1.1" 200 2979
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET /profile/ HTTP/1.1" 200 11626
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/main.css HTTP/1.1" 200 15250
+"GET /static/css/profile.css HTTP/1.1" 200 4005
+"GET /static/js/profile.js HTTP/1.1" 200 25824
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/orders/commandes/my_orders/ HTTP/1.1" 200 2979
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET /profile/ HTTP/1.1" 200 11626
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/profile.css HTTP/1.1" 200 4005
+"GET /static/css/main.css HTTP/1.1" 200 15250
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/js/profile.js HTTP/1.1" 200 25824
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/orders/commandes/my_orders/ HTTP/1.1" 200 2979
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET /profile/ HTTP/1.1" 200 11626
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/profile.css HTTP/1.1" 200 4005
+"GET /static/css/main.css HTTP/1.1" 200 15250
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/js/profile.js HTTP/1.1" 200 25824
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/orders/commandes/my_orders/ HTTP/1.1" 200 2979
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"POST /admin/orders/commande/ HTTP/1.1" 302 0
+"GET /admin/orders/commande/ HTTP/1.1" 200 35271
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /profile/ HTTP/1.1" 200 11626
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/main.css HTTP/1.1" 200 15250
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/css/profile.css HTTP/1.1" 200 4005
+"GET /static/js/profile.js HTTP/1.1" 200 25824
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/orders/commandes/my_orders/ HTTP/1.1" 200 2979
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"GET /admin/orders/commande/23/change/ HTTP/1.1" 200 45379
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/menu/plat/ HTTP/1.1" 200 31247
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /reservations/ HTTP/1.1" 200 9678
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/restaurant/reservations/mes-reservations/ HTTP/1.1" 200 27
+"GET /api/restaurant/tables/disponibles/?date=2025-06-20&heure=12:00&nb_personnes=9 HTTP/1.1" 200 78
+"GET /api/restaurant/tables/disponibles/?date=2025-06-20&heure=12:00&nb_personnes=4 HTTP/1.1" 200 1131
+"POST /api/restaurant/reservations/ HTTP/1.1" 201 232
+"GET /api/restaurant/reservations/mes-reservations/ HTTP/1.1" 200 259
+"GET /admin/restaurant/table/ HTTP/1.1" 200 20601
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/restaurant/reservation/ HTTP/1.1" 200 27313
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /api/restaurant/tables/disponibles/?date=2025-06-20&heure=12:00&nb_personnes=4 HTTP/1.1" 200 1131
+"GET /profile/ HTTP/1.1" 200 11626
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/restaurant/reservations/mes-reservations/ HTTP/1.1" 200 259
+Not Found: /api/auth/profile/update/
+"PATCH /api/auth/profile/update/ HTTP/1.1" 404 5737
+"GET /api/orders/commandes/my_orders/ HTTP/1.1" 200 2979
+"GET /profile/ HTTP/1.1" 200 11626
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/profile.css HTTP/1.1" 200 4005
+"GET /static/css/main.css HTTP/1.1" 200 15250
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/js/profile.js HTTP/1.1" 200 25824
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+"GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4622
+"GET /profile/ HTTP/1.1" 200 11626
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+"GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4622
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/main.css HTTP/1.1" 200 15250
+"GET /static/css/profile.css HTTP/1.1" 200 4005
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/js/profile.js HTTP/1.1" 200 25824
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+Not Found: /api/auth/profile/update/
+"PATCH /api/auth/profile/update/ HTTP/1.1" 404 5737
+Not Found: /api/auth/profile/update/
+"PATCH /api/auth/profile/update/ HTTP/1.1" 404 5737
+"GET /profile/ HTTP/1.1" 200 11626
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/main.css HTTP/1.1" 200 15250
+"GET /static/css/profile.css HTTP/1.1" 200 4005
+"GET /static/js/main.js HTTP/1.1" 200 18531
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+"GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4622
+"GET /static/js/profile.js HTTP/1.1" 200 25817
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+"GET /api/auth/profile/ HTTP/1.1" 200 274
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"PATCH /api/auth/profile/ HTTP/1.1" 200 343
+"GET /profile/ HTTP/1.1" 200 11626
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/main.css HTTP/1.1" 200 15250
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/css/profile.css HTTP/1.1" 200 4005
+"GET /static/js/profile.js HTTP/1.1" 200 25817
+"GET /api/auth/profile/ HTTP/1.1" 200 275
+"GET /api/auth/profile/ HTTP/1.1" 200 275
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"PATCH /api/auth/profile/ HTTP/1.1" 200 344
+"GET /profile/ HTTP/1.1" 200 11626
+"GET /static/js/profile.js HTTP/1.1" 304 0
+"GET /api/auth/profile/ HTTP/1.1" 200 276
+"GET /api/auth/profile/ HTTP/1.1" 200 276
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+"GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4622
+"GET /profile/ HTTP/1.1" 200 11626
+"GET /static/css/normalize.css HTTP/1.1" 200 6137
+"GET /static/css/profile.css HTTP/1.1" 200 4005
+"GET /static/css/main.css HTTP/1.1" 200 15250
+"GET /static/js/main.js HTTP/1.1" 200 18531
+"GET /static/js/profile.js HTTP/1.1" 200 26276
+"GET /api/auth/profile/ HTTP/1.1" 200 276
+"GET /api/auth/profile/ HTTP/1.1" 200 276
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4511
+"PATCH /api/auth/profile/ HTTP/1.1" 200 342
+"PATCH /api/auth/profile/ HTTP/1.1" 200 343
+"GET / HTTP/1.1" 200 5854
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /api/auth/profile/ HTTP/1.1" 200 275
+"GET /api/auth/profile/ HTTP/1.1" 200 275
